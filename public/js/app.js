@@ -64,14 +64,13 @@ function loadRecaptcha() {
     return new Promise((resolve) => {
         // Si ya está cargado, resolver inmediatamente
         if (typeof grecaptcha !== 'undefined') {
-            console.log('reCAPTCHA ya está cargado');
             resolve();
             return;
         }
 
         // Verificar si el script ya se está cargando
         if (document.querySelector('script[src*="recaptcha"]')) {
-            console.log('reCAPTCHA ya se está cargando...');
+            // console.log('reCAPTCHA ya se está cargando...');
             // Esperar a que termine de cargar
             const checkLoaded = setInterval(() => {
                 if (typeof grecaptcha !== 'undefined') {
@@ -82,7 +81,7 @@ function loadRecaptcha() {
             return;
         }
 
-        console.log('Iniciando carga de reCAPTCHA...');
+        // console.log('Iniciando carga de reCAPTCHA...');
 
         const script = document.createElement('script');
         script.src = 'https://www.recaptcha.net/recaptcha/api.js?render=explicit';
@@ -90,7 +89,7 @@ function loadRecaptcha() {
         script.defer = true;
 
         script.onload = () => {
-            console.log('reCAPTCHA cargado correctamente desde recaptcha.net');
+            // console.log('reCAPTCHA cargado correctamente desde recaptcha.net');
             // Esperar a que grecaptcha esté disponible
             const waitForGrecaptcha = setInterval(() => {
                 if (typeof grecaptcha !== 'undefined') {
@@ -116,7 +115,7 @@ function loadGoogleRecaptcha(resolve) {
     script.defer = true;
 
     script.onload = () => {
-        console.log('reCAPTCHA cargado correctamente desde google.com');
+        // console.log('reCAPTCHA cargado correctamente desde google.com');
         const waitForGrecaptcha = setInterval(() => {
             if (typeof grecaptcha !== 'undefined') {
                 clearInterval(waitForGrecaptcha);
@@ -849,7 +848,7 @@ class CommentsManager {
         }
 
         try {
-            console.log('Inicializando widget reCAPTCHA...');
+            // console.log('Inicializando widget reCAPTCHA...');
             this.recaptchaWidgetId = grecaptcha.render(recaptchaContainer, {
                 'sitekey': '6Ld7oL0rAAAAALwdJ06-4m7BodInxzPrxRb5YJ4O',
                 'callback': (token) => { console.log('Recaptcha verificado'); },
@@ -1014,7 +1013,6 @@ class CommentsManager {
 class ContactFormManager {
     constructor() {
         this.form = getElement('contactForm');
-        this.alertBox = getElement('formAlert');
 
         if (!this.form) return;
 
@@ -1089,31 +1087,8 @@ class ContactFormManager {
     }
 
     showAlert(message, type) {
-        while (this.alertBox.firstChild) {
-            this.alertBox.removeChild(this.alertBox.firstChild);
-        }
-
-        const alertDiv = createSafeElement('div', `p-4 rounded-lg mb-4 flex justify-between items-center ${type === 'success' ? 'bg-green-900/30 border border-green-600 text-green-200' : 'bg-red-900/30 border border-red-600 text-red-200'}`);
-        const messageNode = document.createTextNode(message);
-        const closeButton = createSafeElement('button', 'text-white hover:text-gray-300 focus:outline-none ml-4', '', {
-            'type': 'button',
-            'aria-label': 'Close'
-        });
-        closeButton.innerHTML = '<i class="fas fa-times"></i>';
-
-        closeButton.addEventListener('click', () => {
-            alertDiv.remove();
-        });
-
-        alertDiv.appendChild(messageNode);
-        alertDiv.appendChild(closeButton);
-        this.alertBox.appendChild(alertDiv);
-
-        setTimeout(() => {
-            if (alertDiv.parentNode) {
-                alertDiv.remove();
-            }
-        }, 5000);
+        // Usar el AlertManager unificado en lugar de alertas personalizadas
+        AlertManager.show(message, type === 'error' ? 'error' : 'success', 3000);
     }
 
     bindEvents() {

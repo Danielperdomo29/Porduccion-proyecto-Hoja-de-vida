@@ -1285,3 +1285,56 @@ footer p {
     scroll-behavior: smooth;
   }
 }
+
+/* === FIX: Outline Buttons Borders === */
+.btn-outline-primary,
+.btn-outline-secondary,
+.btn-outline-success,
+.btn-outline-danger,
+.btn-outline-warning,
+.btn-outline-info,
+.btn-outline-light,
+.btn-outline-dark {
+  border-width: 2px !important;
+  border-style: solid !important;
+}
+
+.btn-outline-primary {
+  border-color: #0d6efd !important;
+  color: #0d6efd !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: #0d6efd !important;
+  color: #fff !important;
+}
+
+.btn-outline-success {
+  border-color: #25d366 !important;
+  color: #25d366 !important;
+}
+
+.btn-outline-success:hover {
+  background-color: #25d366 !important;
+  color: #fff !important;
+}
+
+.btn-outline-info {
+  border-color: #0dcaf0 !important;
+  color: #0dcaf0 !important;
+}
+
+.btn-outline-info:hover {
+  background-color: #0dcaf0 !important;
+  color: #000 !important;
+}
+
+.btn-outline-danger {
+  border-color: #dc3545 !important;
+  color: #dc3545 !important;
+}
+
+.btn-outline-danger:hover {
+  background-color: #dc3545 !important;
+  color: #fff !important;
+}
