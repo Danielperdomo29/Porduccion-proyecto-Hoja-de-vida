@@ -1,11 +1,5 @@
 // Configuración de API optimizada
-const getAPIUrl = () => {
-    return window.location.hostname.includes('alwaysdata.net')
-        ? `${window.location.protocol}//${window.location.hostname}`
-        : "http://localhost:3000";
-};
-
-const API_URL = getAPIUrl();
+const API_URL = "";
 
 // Cache de elementos DOM
 const DOMCache = new Map();
@@ -737,9 +731,9 @@ class AuthManager {
             this.userAvatar.src = user.avatar || 'https://i.imgur.com/8Km9tLL.jpg';
             this.userAvatar.alt = `Avatar de ${user.nombre}`;
             this.userName.textContent = user.nombre;
-            this.userInfo.classList.remove('hidden');
-            this.btnLogin.classList.add('hidden');
-            this.btnLogout.classList.remove('hidden');
+            this.userInfo.classList.remove('d-none');
+            this.btnLogin.classList.add('d-none');
+            this.btnLogout.classList.remove('d-none');
 
             this.userInfo.style.opacity = '0';
             this.userInfo.style.transform = 'translateY(-10px)';
@@ -749,9 +743,9 @@ class AuthManager {
                 this.userInfo.style.transition = 'all 0.3s ease';
             }, 100);
         } else {
-            this.userInfo.classList.add('hidden');
-            this.btnLogin.classList.remove('hidden');
-            this.btnLogout.classList.add('hidden');
+            this.userInfo.classList.add('d-none');
+            this.btnLogin.classList.remove('d-none');
+            this.btnLogout.classList.add('d-none');
         }
     }
 
@@ -896,12 +890,23 @@ class CommentsManager {
             return;
         }
 
+        // Obtener token de reCAPTCHA
+        let captchaToken = null;
+        if (typeof grecaptcha !== 'undefined' && this.recaptchaWidgetId !== null) {
+            captchaToken = grecaptcha.getResponse(this.recaptchaWidgetId);
+        }
+
+        if (!captchaToken) {
+            AlertManager.show('Por favor completa el captcha', 'warning');
+            return;
+        }
+
         try {
             const response = await fetch(`${API_URL}/api/comentarios`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 credentials: 'include',
-                body: JSON.stringify({ contenido })
+                body: JSON.stringify({ contenido, captcha: captchaToken })
             });
 
             if (response.status === 401) {
@@ -909,13 +914,29 @@ class CommentsManager {
                 return;
             }
 
-            if (!response.ok) throw new Error('Error al enviar');
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.error || 'Error al enviar');
+            }
 
             this.textarea.value = '';
-            AlertManager.show('Comentario enviado', 'success');
+            AlertManager.show(data.mensaje || 'Comentario enviado', 'success');
+
+            // Resetear captcha
+            if (typeof grecaptcha !== 'undefined' && this.recaptchaWidgetId !== null) {
+                grecaptcha.reset(this.recaptchaWidgetId);
+            }
+
             await this.loadComments();
         } catch (error) {
-            AlertManager.show('Error al enviar comentario', 'error');
+            console.error('Error submitting comment:', error);
+            AlertManager.show(error.message || 'Error al enviar comentario', 'error');
+
+            // Resetear captcha en caso de error también
+            if (typeof grecaptcha !== 'undefined' && this.recaptchaWidgetId !== null) {
+                grecaptcha.reset(this.recaptchaWidgetId);
+            }
         }
     }
     createCommentElement(comentario) {

@@ -26,6 +26,9 @@ const authController = require('./controllers/authController');
 const isDev = process.env.NODE_ENV !== "production";
 const app = express();
 
+// Trust Proxy for secure cookies behind reverse proxies
+app.set('trust proxy', 1);
+
 // Compression
 app.use(compression());
 
@@ -115,6 +118,7 @@ if (process.env.MONGO_URI) {
 if (isDev) {
     sessionConfig.cookie.secure = false;
     sessionConfig.cookie.sameSite = 'lax';
+    sessionConfig.proxy = true;
 }
 
 app.use(session(sessionConfig));

@@ -1,5 +1,34 @@
+# Variables de entorno (NUNCA subir al repositorio)
 .env
-node_modules
-certs
+.env.*
+!.env.example
+
+# Node módulos
+node_modules/
+
+# Certificados y claves privadas
+certs/
 *.key
 *.pem
+*.cert
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Archivos temporales
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+
+# Archivos de configuración de IDE
+.vscode/
+.idea/
+
+# Build output (se genera automáticamente)
+public/css/output.css
+
+# Backups
+*.bak

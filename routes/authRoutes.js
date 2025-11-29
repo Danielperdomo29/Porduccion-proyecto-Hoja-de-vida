@@ -14,7 +14,7 @@ router.get('/google/callback',
   })
 );
 
-router.get('/logout', authController.logout);
+router.post('/logout', authController.logout);
 router.get('/current', authController.getCurrentUser);
 
 module.exports = router;
