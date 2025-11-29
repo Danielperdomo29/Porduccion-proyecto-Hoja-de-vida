@@ -1,0 +1,21 @@
+# robots.txt para danielper29.alwaysdata.net
+# Autor: Daniel Enrique Perdomo Carvajal
+# Última actualización: 2025-10-23
+
+User-agent: *
+Allow: /
+Crawl-delay: 2
+
+# Bloquear rutas internas o APIs
+Disallow: /api/
+Disallow: /login/
+Disallow: /admin/
+Disallow: /uploads/
+
+# Enlaces principales de la web
+Sitemap: https://danielper29.alwaysdata.net/sitemap.xml
+
+# Información adicional para buscadores
+# Palabras clave relacionadas:
+# Daniel Enrique Perdomo Carvajal, Daniel Perdomo, Ingeniero Electrónico, Portafolio, Desarrollador, Full Stack, Colombia
+
