@@ -274,8 +274,8 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 **Daniel Perdomo Carvajal**
 
 - 📧 Email: [danielperdomoconsultor@gmail.com](mailto:danielperdomoconsultor@gmail.com)
-- 💼 LinkedIn: [Tu perfil](https://www.linkedin.com/in/daniel-enrique-perdomo-carvajal-3a472a187/)
-- 🌐 Portfolio: [https://tu-dominio.com](https://danielper29.alwaysdata.net/)
+- 💼 LinkedIn: [Daniel enrique perdomo](https://www.linkedin.com/in/daniel-enrique-perdomo-carvajal-3a472a187/)
+- 🌐 Portfolio: [https://danielperdomocarvajal.com](https://danielper29.alwaysdata.net/)
 
 ---
 
@@ -296,4 +296,5 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 **Hecho con amor y en Colombia**
 
 </div>
+
 
