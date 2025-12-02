@@ -1,0 +1,165 @@
+{
+    "frasesOfensivas": [
+        "tiene.*grande",
+        "tiene.*enorme",
+        "le gusta.*sexo",
+        "quiere.*sexo",
+        "busca.*sexo",
+        "me gusta.*sexo",
+        "hacer.*amor",
+        "hacer.*el amor",
+        "tener.*relaciones",
+        "quiero.*coger",
+        "vamos.*a.*follar",
+        "vamos.*a.*tirar",
+        "me.*calienta",
+        "me.*excita",
+        "me.*prende",
+        "estas.*buena",
+        "estas.*bueno",
+        "que.*rico",
+        "que.*sabroso",
+        "ven.*conmigo",
+        "te.*quiero.*desnuda",
+        "te.*quiero.*desnudo",
+        "me.*paras",
+        "me.*pone",
+        "consumir.*drogas",
+        "vender.*drogas",
+        "trafico.*de.*drogas",
+        "comprar.*drogas",
+        "fumar.*marihuana",
+        "fumar.*hierba",
+        "esnifar.*coca",
+        "inhalar.*pegante",
+        "tomar.*pastillas"
+    ],
+    "metaforasSexuales": {
+        "berenjena": {
+            "contexto": [
+                "tiene",
+                "mide",
+                "grande",
+                "enorme",
+                "larga",
+                "gorda"
+            ],
+            "severidad": "alta"
+        },
+        "chorizo": {
+            "contexto": [
+                "tiene",
+                "mide",
+                "grande",
+                "enorme",
+                "largo",
+                "gordo"
+            ],
+            "severidad": "alta"
+        },
+        "salchicha": {
+            "contexto": [
+                "tiene",
+                "grande",
+                "enorme",
+                "larga",
+                "gorda"
+            ],
+            "severidad": "alta"
+        },
+        "pepino": {
+            "contexto": [
+                "tiene",
+                "grande",
+                "enorme",
+                "largo",
+                "gordo"
+            ],
+            "severidad": "alta"
+        },
+        "platano": {
+            "contexto": [
+                "tiene",
+                "grande",
+                "enorme",
+                "largo",
+                "gordo"
+            ],
+            "severidad": "alta"
+        },
+        "banana": {
+            "contexto": [
+                "tiene",
+                "grande",
+                "enorme",
+                "larga",
+                "gorda"
+            ],
+            "severidad": "alta"
+        },
+        "melocoton": {
+            "contexto": [
+                "tiene",
+                "grande",
+                "enormes",
+                "redondo",
+                "jugoso"
+            ],
+            "severidad": "alta"
+        },
+        "melon": {
+            "contexto": [
+                "tiene",
+                "grandes",
+                "enormes",
+                "redondos"
+            ],
+            "severidad": "alta"
+        },
+        "sandia": {
+            "contexto": [
+                "tiene",
+                "grandes",
+                "enormes"
+            ],
+            "severidad": "alta"
+        },
+        "papaya": {
+            "contexto": [
+                "tiene",
+                "grande",
+                "jugosa",
+                "rica"
+            ],
+            "severidad": "alta"
+        },
+        "sunga": {
+            "contexto": [
+                "usa",
+                "tiene",
+                "viste",
+                "lleva",
+                "apretada"
+            ],
+            "severidad": "alta"
+        },
+        "tanga": {
+            "contexto": [
+                "usa",
+                "tiene",
+                "viste",
+                "lleva",
+                "apretada"
+            ],
+            "severidad": "media"
+        }
+    },
+    "patronesSospechosos": [
+        "\\b(le|me|te)\\s+(gusta|encanta|fascina)\\s+(el|la)?\\s*sexo",
+        "\\b(quiero|quiere|queremos)\\s+(tener|hacer)\\s+(sexo|relaciones)",
+        "\\btien(e|es)\\s+(una|un)\\s+\\w+\\s+(grande|enorme|gorda|largo)",
+        "\\b(fumar|consumir|vender|traficar|comprar)\\s+(drogas?|marihuana|cocaina|bazuco|perico)",
+        "\\b(estas?|sos|soy)\\s+(muy)?\\s+(buena?|rico|sabrosa?|caliente)",
+        "\\b(me|te|le)\\s+(calienta|excita|prende|para)"
+    ]
+}

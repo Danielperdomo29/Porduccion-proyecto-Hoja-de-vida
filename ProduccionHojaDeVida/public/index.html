@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Hoja de vida de Daniel Enrique Perdomo Carvajal. Consultor en tecnología, desarrollo web y soluciones digitales."
+    />
+    <meta
+      name="keywords"
+      content="Daniel Enrique Perdomo Carvajal, consultor, hoja de vida, desarrollo web, tecnología"
+    />
+    <title>Daniel Enrique Perdomo Carvajal - Ingeniero Electrónico</title>
+
+    <!-- CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/estilos.css" />
+
+    <!-- Favicons -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/Imagenes/favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/Imagenes/favicon/favicon.svg"
+    />
+    <link rel="shortcut icon" href="/Imagenes/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/Imagenes/favicon/apple-touch-icon.png"
+    />
+
+    <!-- Manifest -->
+    <link rel="manifest" href="Imagenes/favicon/site.webmanifest" />
+    <meta name="apple-mobile-web-app-title" content="Perdomo Industries" />
+    <meta name="application-name" content="Perdomo Industries" />
+    <meta name="theme-color" content="#ffcc00" />
+  </head>
+  <body>
+    <canvas id="matrix-canvas" class="matrix-glow" aria-hidden="true"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <img
+          src="Imagenes/FotoDePerfil.png"
+          alt="Daniel Perdomo - Ingeniero Electrónico"
+          class="rounded-circle border border-warning me-3 perfil-img"
+          width="45"
+          height="45"
+          data-bs-toggle="modal"
+          data-bs-target="#modalFoto"
+          loading="lazy"
+        />
+        <a
+          class="navbar-brand fw-bold"
+          href="https://www.linkedin.com/in/daniel-enrique-perdomo-carvajal-3a472a187/"
+          target="_blank"
+          rel="noopener"
+          >Perfil Profesional</a
+        >
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#perfil">Perfil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#experiencia">Experiencia</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#habilidades">Habilidades</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#proyectos">Proyectos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#videos">Videos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#comentarios">Comentarios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contacto">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" aria-labelledby="hero-title">
+      <div class="hero-slider" aria-live="polite"></div>
+
+      <div class="hero-content text-center text-white">
+        <h1 id="nombre-completo" class="glow-text-animated">
+          Daniel Enrique Perdomo Carvajal
+        </h1>
+        <p id="descripcion-profesion" class="lead">
+          Ingeniero Electrónico | Fullstack Developer | DevSecOps |
+          Automatización
+        </p>
+
+        <div class="hero-dinamico mt-4">
+          <h2 id="hero-title" class="h3"></h2>
+          <p id="hero-subtitle" class="h5"></p>
+        </div>
+        <a href="#contacto" class="btn btn-warning btn-lg btn-animado mt-3"
+          >Contáctame</a
+        >
+      </div>
+
+      <button class="hero-control prev" aria-label="Slide anterior">
+        &#10094;
+      </button>
+      <button class="hero-control next" aria-label="Slide siguiente">
+        &#10095;
+      </button>
+
+      <div class="hero-indicators" aria-label="Controles del slider"></div>
+    </section>
+
+    <main id="contenido-principal">
+      <!-- Perfil Profesional -->
+      <section
+        id="perfil"
+        class="container py-5"
+        data-aos="fade-up"
+        aria-labelledby="perfil-title"
+      >
+        <div class="card shadow-lg rounded-4 p-4">
+          <h2 id="perfil-title" class="h4 text-warning">
+            <i class="fas fa-user me-2" aria-hidden="true"></i>Perfil
+            Profesional
+          </h2>
+          <p class="mb-0 text-light">
+            Analista de Seguridad Informática y Desarrollador especializado en
+            DevSecOps, integrando seguridad en pipelines CI/CD con Docker y
+            GitHub Actions. Domino Python para procesamiento de imágenes,
+            señales digitales y construcción de redes neuronales, junto con
+            pentesting (Nmap, Burp Suite, Metasploit) y desarrollo full-stack
+            (JavaScript, TypeScript, React, Node.js). En Coasquímicos S.A.S.
+            lideré automatización industrial y plataforma web que aumentó
+            ingresos 65%. Implemento prácticas DevSecOps para asegurar
+            desarrollo desde el diseño, con pipelines automatizados y escaneos
+            de seguridad continuos. Certificaciones estratégicas a mediano y lago plazo: AWS Solutions Architect, EWPT y OSCP. 
+          </p>
+        </div>
+      </section>
+
+      <!-- Experiencia -->
+      <section
+        id="experiencia"
+        class="py-5"
+        data-aos="fade-up"
+        aria-labelledby="experiencia-title"
+      >
+        <div class="container">
+          <h2 id="experiencia-title" class="mb-4 h4 text-warning">
+            <i class="fas fa-briefcase me-2" aria-hidden="true"></i>Experiencia
+          </h2>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <article class="card shadow-lg rounded-4 p-4 h-100">
+                <h3 class="h5 text-light">Coasquímicos S.A.S (2023–2025)</h3>
+                <h4 class="h6 text-warning">
+                  Ingeniero de Automatización y Desarrollo | 2023 – 2025
+                </h4>
+                <ul class="mb-0 text-light">
+                  <li>
+                    Lideré la automatización de un agitador industrial,
+                    diseñando e implementando un sistema de control basado en
+                    microcontroladores que evitó la necesidad de PLCs costosos,
+                    mejorando la eficiencia de producción.
+                  </li>
+                  <li>
+                    Diseñé y desarrollé una plataforma web para ventas que
+                    resultó en un incremento del 65% en los ingresos.
+                  </li>
+                  <li>
+                    Implementé algoritmos de análisis de datos para la toma de
+                    decisiones basada en el comportamiento de los usuarios.
+                  </li>
+                  <li>
+                    Gestioné el mantenimiento preventivo y correctivo de la
+                    infraestructura tecnológica y equipos industriales,
+                    minimizando tiempos de inactividad.
+                  </li>
+                  <li>
+                    Mantenimiento preventivo y correctivo de equipos
+                    electrónicos industriales.
+                  </li>
+                </ul>
+              </article>
+            </div>
+            <div class="col-md-6">
+              <article class="card shadow-lg rounded-4 p-4 h-100">
+                <h3 class="h5 text-light">
+                  Freelancer – CRM Licitaciones KJC proyectos
+                </h3>
+                <h4 class="h6 text-warning">Desarrollador Full-Stack | 2024</h4>
+                <ul class="mb-0 text-light">
+                  <li>
+                    Diseñé y desarrollé un CRM web personalizado para la gestión
+                    de licitaciones, con filtros avanzados por entidad
+                    contratante.
+                  </li>
+                  <li>
+                    Automatización integral de documentación (hojas de vida,
+                    certificados, cronogramas), aumentando la eficiencia
+                    operativa.
+                  </li>
+                  <li>
+                    Implementación de un sistema de seguimiento y alertas
+                    inteligentes para convocatorias.
+                  </li>
+                </ul>
+              </article>
+            </div>
+            <div class="col-md-6">
+              <article class="card shadow-lg rounded-4 p-4 h-100">
+                <h3 class="h5 text-light">Grupo Empresarial Recicla S.A.S.</h3>
+                <h4 class="h6 text-warning">
+                  Ingeniero de Proyectos | Modalidad Híbrida | Oct 2024 - Dic
+                  2024
+                </h4>
+                <ul class="mb-0 text-light">
+                  <li>
+                    Diseñé e implementé un Sistema de Información Geográfica
+                    (SIG) utilizando QGIS para la optimización de rutas de
+                    recolección, cumpliendo con la normativa SUI.
+                  </li>
+                  <li>
+                    Gestioné y di soporte a la infraestructura web de la empresa
+                  </li>
+                </ul>
+              </article>
+            </div>
+            <div class="col-md-6">
+              <article class="card shadow-lg rounded-4 p-4 h-100">
+                <h3 class="h5 text-light">
+                  EcoSmile S.A.S. – Ingeniería Sostenible
+                </h3>
+                <h4 class="h6 text-warning">
+                  Desarrollador junior & Consultor TI | Jornada Parcial | May
+                  2019 - Ene 2025
+                </h4>
+                <ul class="mb-0 text-light">
+                  <li>
+                    Lideré el diseño, desarrollo y mantenimiento de aplicaciones
+                    web responsivas y de alto rendimiento.
+                  </li>
+                  <li>
+                    Asesoré técnicamente en el dimensionamiento de sistemas de
+                    energía renovable y desarrollé modelos 3D para proyectos de
+                    sostenibilidad.
+                  </li>
+                  <li>
+                    Gestioné la infraestructura tecnológica, providing soporte
+                    técnico avanzado y resolución proactiva de incidentes.
+                  </li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Habilidades -->
+      <section
+        id="habilidades"
+        class="container py-5"
+        data-aos="zoom-in-up"
+        aria-labelledby="habilidades-title"
+      >
+        <h2 id="habilidades-title" class="h4 text-warning">
+          <i class="fas fa-cogs me-2" aria-hidden="true"></i>Habilidades
+        </h2>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="card shadow rounded-4 p-3 h-100">
+              <h3 class="h5 text-light">
+                <i class="fas fa-code me-2" aria-hidden="true"></i>Desarrollo
+                Web & Software
+              </h3>
+              <ul class="mb-0 text-light">
+                <li>
+                  HTML5, CSS3, JavaScript, React, TypeScript, C++,Java y Python
+                </li>
+                <li>
+                  Node.js, Spring Boot, diseño responsivo: tailwind y bootstrap
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card shadow rounded-4 p-3 h-100">
+              <h3 class="h5 text-light">
+                <i class="fas fa-microchip me-2" aria-hidden="true"></i
+                >Electrónica y Automatización
+              </h3>
+              <ul class="mb-0 text-light">
+                <li>PLCs, sensores, IoT, microcontroladores y FPGA</li>
+                <li>
+                  Mantenimiento industrial, energía renovable y
+                  telecomunicaciones
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card shadow rounded-4 p-3 h-100">
+              <h3 class="h5 text-light">
+                <i class="fas fa-shield-alt me-2" aria-hidden="true"></i
+                >Ciberseguridad
+              </h3>
+              <ul class="mb-0 text-light">
+                <li>Pentesting, XSS, SQLi, Red Team y servidores</li>
+                <li>Linux, scripting, bash y entorno cloud</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card shadow rounded-4 p-3 h-100">
+              <h3 class="h5 text-light">
+                <i class="fas fa-paint-brush me-2" aria-hidden="true"></i>Diseño
+              </h3>
+              <ul class="mb-0 text-light">
+                <li>Diseño gráfico 2D y 3D, renderizado 3D</li>
+                <li>Edición de video</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Proyectos Webs -->
+      <section
+        id="proyectos"
+        class="container py-5"
+        data-aos="fade-up"
+        aria-labelledby="proyectos-title"
+      >
+        <h2 id="proyectos-title" class="text-center h4 text-warning">
+          <i class="fas fa-laptop-code me-2" aria-hidden="true"></i>Proyectos
+          Webs
+        </h2>
+        <div class="row g-4 mt-4">
+          <div class="col-md-4">
+            <article class="card h-100 shadow-lg border-0">
+              <a
+                href="https://danielai.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visitar Asistente de IA"
+              >
+                <img
+                  src="https://d33wubrfki0l68.cloudfront.net/68f27c815ecc240b156a98de/screenshot_2025-10-17-17-27-31-0000.webp"
+                  class="card-img-top img-fluid"
+                  alt="Captura del proyecto Asistente de IA"
+                  loading="lazy"
+                  width="400"
+                  height="220"
+                />
+              </a>
+              <div class="card-body bg-dark text-light text-center">
+                <h3 class="card-title h6">Asistente de IA</h3>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-4">
+            <article class="card h-100 shadow-lg border-0">
+              <a
+                href="https://superb-cobbler-c5b2fb.netlify.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visitar Carrito de compras"
+              >
+                <img
+                  src="https://d33wubrfki0l68.cloudfront.net/684716c345155d34c2a2b46a/screenshot_2025-06-09-17-15-50-0000.webp"
+                  class="card-img-top img-fluid"
+                  alt="Captura del proyecto Carrito de compras"
+                  loading="lazy"
+                  width="400"
+                  height="220"
+                />
+              </a>
+              <div class="card-body bg-dark text-light text-center">
+                <h3 class="card-title h6">Carrito de compras</h3>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-4">
+            <article class="card h-100 shadow-lg border-0">
+              <a
+                href="https://ephemeral-nasturtium-086c92.netlify.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visitar CRM Administrativo"
+              >
+                <img
+                  src="https://d33wubrfki0l68.cloudfront.net/67de2157b62b6d6cad209afb/screenshot_2025-03-22-02-32-57-0000.webp"
+                  class="card-img-top img-fluid"
+                  alt="Captura del proyecto CRM Administrativo"
+                  loading="lazy"
+                  width="400"
+                  height="220"
+                />
+              </a>
+              <div class="card-body bg-dark text-light text-center">
+                <h3 class="card-title h6">CRM Administrativo</h3>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-4">
+            <article class="card h-100 shadow-lg border-0">
+              <a
+                href="https://astounding-pixie-b9b9e9.netlify.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visitar Buscador de autos"
+              >
+                <img
+                  src="https://d33wubrfki0l68.cloudfront.net/67d3236fa1bbab29764727fb/screenshot_2025-03-13-18-26-59-0000.webp"
+                  class="card-img-top img-fluid"
+                  alt="Captura del proyecto Buscador de autos"
+                  loading="lazy"
+                  width="400"
+                  height="220"
+                />
+              </a>
+              <div class="card-body bg-dark text-light text-center">
+                <h3 class="card-title h6">Buscador de autos</h3>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-4">
+            <article class="card h-100 shadow-lg border-0">
+              <a
+                href="https://relaxed-moonbeam-ebdc55.netlify.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visitar Cotizador de seguros"
+              >
+                <img
+                  src="https://d33wubrfki0l68.cloudfront.net/67cc657b8f50d0908cb07f1c/screenshot_2025-03-08-15-42-53-0000.webp"
+                  class="card-img-top img-fluid"
+                  alt="Captura del proyecto Cotizador de seguros"
+                  loading="lazy"
+                  width="400"
+                  height="220"
+                />
+              </a>
+              <div class="card-body bg-dark text-light text-center">
+                <h3 class="card-title h6">Cotizador de seguros</h3>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-4">
+            <article class="card h-100 shadow-lg border-0">
+              <a
+                href="https://stupendous-tulumba-f5a90e.netlify.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visitar Administrador de pacientes"
+              >
+                <img
+                  src="https://d33wubrfki0l68.cloudfront.net/678291d8860fb6ebede3a299/screenshot_2025-01-11-15-44-26-0000.webp"
+                  class="card-img-top img-fluid"
+                  alt="Captura del proyecto Administrador de pacientes"
+                  loading="lazy"
+                  width="400"
+                  height="220"
+                />
+              </a>
+              <div class="card-body bg-dark text-light text-center">
+                <h3 class="card-title h6">Administrador de pacientes</h3>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-4">
+            <article class="card h-100 shadow-lg border-0">
+              <a
+                href="https://nimble-bubblegum-41dc5a.netlify.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visitar Calculadora de Gastos Quincenales"
+              >
+                <img
+                  src="/Imagenes/proyecto_GastosQuincenales.webp"
+                  class="card-img-top img-fluid"
+                  alt="Captura del proyecto Calculadora de Gastos Quincenales"
+                  loading="lazy"
+                  width="400"
+                  height="220"
+                />
+              </a>
+              <div class="card-body bg-dark text-light text-center">
+                <h3 class="card-title h6">Calculadora de Gastos Quincenales</h3>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Diseños y Catálogos -->
+      <section
+        id="disenos"
+        class="container py-5"
+        data-aos="fade-up"
+        aria-labelledby="disenos-title"
+      >
+        <h2 id="disenos-title" class="text-center h4 text-warning">
+          <i class="fas fa-palette me-2" aria-hidden="true"></i>Diseños y
+          Catálogos
+        </h2>
+        <div class="row g-4 mt-4">
+          <div class="col-md-4">
+            <article class="card h-100 shadow-lg border-0">
+              <a
+                href="https://drive.google.com/file/d/1marWO-xww19-wgXyQ6Pazv7RVhzAjs6F/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Ver Catálogo de productos"
+              >
+                <img
+                  src="./Imagenes/CatalogoDeproductos.webp"
+                  class="card-img-top img-fluid"
+                  alt="Catálogo de productos diseño ecológico"
+                  loading="lazy"
+                  width="400"
+                  height="220"
+                />
+              </a>
+              <div class="card-body bg-dark text-light text-center">
+                <h3 class="card-title h6">Catálogo de productos</h3>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-4">
+            <article class="card h-100 shadow-lg border-0">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Ver Publicidad Visual"
+              >
+                <img
+                  src="./Imagenes/BannerPublicitario.webp"
+                  class="card-img-top img-fluid"
+                  alt="Banner publicitario visual"
+                  loading="lazy"
+                  width="400"
+                  height="220"
+                />
+              </a>
+              <div class="card-body bg-dark text-light text-center">
+                <h3 class="card-title h6">Publicidad Visual</h3>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-4">
+            <article class="card h-100 shadow-lg border-0">
+              <a
+                href="https://drive.google.com/file/d/1hqOCeJDDWxMz6xzmcpoGJnYtaTKICO62/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Ver Diseño Creativo en 3D"
+              >
+                <img
+                  src="./Imagenes/Diseño_En_3D.webp"
+                  class="card-img-top img-fluid"
+                  alt="Diseño creativo en 3D"
+                  loading="lazy"
+                  width="400"
+                  height="220"
+                />
+              </a>
+              <div class="card-body bg-dark text-light text-center">
+                <h3 class="card-title h6">Diseño Creativo en 3D</h3>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Proyectos en Video -->
+      <section
+        id="videos"
+        class="container py-5"
+        data-aos="fade-up"
+        aria-labelledby="videos-title"
+      >
+        <h2 id="videos-title" class="text-center text-warning mb-4 h4">
+          <i class="fas fa-video me-2" aria-hidden="true"></i>Proyectos en Video
+        </h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <article class="card border-0 shadow-lg h-100">
+              <img
+                src="./Imagenes/ControladorDePosicionMotorDC.webp"
+                class="card-img-top img-fluid rounded-top"
+                alt="Controlador PID para motor DC - miniatura"
+                loading="lazy"
+                width="400"
+                height="220"
+              />
+              <div class="card-body bg-dark text-light text-center">
+                <h3 class="card-title h6">
+                  Diseño de controlador PID para motor DC
+                </h3>
+                <a
+                  href="https://drive.google.com/file/d/1zu9-xlcSTSrWlXKQ43voyvTfJDsAchx2/view"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-outline-warning btn-sm"
+                >
+                  <i
+                    class="fas fa-external-link-alt me-1"
+                    aria-hidden="true"
+                  ></i
+                  >Ver en Google Drive
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-4">
+            <article class="card border-0 shadow-lg h-100">
+              <img
+                src="./Imagenes/SistemaDealarmaTemprana.webp"
+                class="card-img-top img-fluid rounded-top"
+                alt="Sistema de alerta temprana - miniatura"
+                loading="lazy"
+                width="400"
+                height="220"
+              />
+              <div class="card-body bg-dark text-light text-center">
+                <h3 class="card-title h6">Sistema de alerta temprana</h3>
+                <a
+                  href="https://drive.google.com/file/d/1zuDyi0XSZDAe2_AxhgKLGV3N8QQ_jGJC/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-outline-warning btn-sm"
+                >
+                  <i
+                    class="fas fa-external-link-alt me-1"
+                    aria-hidden="true"
+                  ></i
+                  >Ver en Google Drive
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-4">
+            <article class="card border-0 shadow-lg h-100">
+              <img
+                src="./Imagenes/Trasmisor-de-baja-potencia.webp"
+                class="card-img-top img-fluid rounded-top"
+                alt="Transmisor FM de baja potencia - miniatura"
+                loading="lazy"
+                width="400"
+                height="220"
+              />
+              <div class="card-body bg-dark text-light text-center">
+                <h3 class="card-title h6">Transmisor FM de baja potencia</h3>
+                <a
+                  href="https://drive.google.com/file/d/1pcy2S0qMcMrT-z2hl5gMqqW9UNE9xocu/view"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-outline-warning btn-sm"
+                >
+                  <i
+                    class="fas fa-external-link-alt me-1"
+                    aria-hidden="true"
+                  ></i
+                  >Ver en Google Drive
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Informes -->
+      <section
+        id="informes"
+        class="container py-5"
+        data-aos="fade-up"
+        aria-labelledby="informes-title"
+      >
+        <h2 id="informes-title" class="text-center text-warning h4">
+          <i class="fas fa-file-alt me-2" aria-hidden="true"></i>Informes
+        </h2>
+        <div class="row g-4 mt-4 justify-content-center">
+          <div class="col-md-5 col-lg-4">
+            <article class="card shadow-lg border-0 h-100">
+              <img
+                src="./Imagenes/ProyectoDeNivel.webp"
+                class="card-img-top rounded-top"
+                alt="Informe técnico de proyecto de nivel - miniatura"
+                loading="lazy"
+                width="300"
+                height="200"
+              />
+              <div class="card-body bg-dark text-light text-center">
+                <h3 class="card-title h6">
+                  Informe Técnico de proyecto de nivel
+                </h3>
+                <a
+                  href="./PROYECTO INSTRUMENTACION.pdf"
+                  class="btn btn-outline-light me-2"
+                  download
+                  aria-label="Descargar informe técnico"
+                >
+                  <i class="fas fa-download me-1" aria-hidden="true"></i
+                  >Descargar
+                </a>
+                <a
+                  href="./PROYECTO INSTRUMENTACION.pdf"
+                  class="btn btn-outline-warning mt-2"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Ver informe técnico online"
+                >
+                  <i class="fas fa-eye me-1" aria-hidden="true"></i>Ver Online
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-5 col-lg-4">
+            <article class="card shadow-lg border-0 h-100">
+              <img
+                src="./Imagenes/Taller.webp"
+                class="card-img-top rounded-top"
+                alt="Infraestructura de red bancaria - miniatura"
+                loading="lazy"
+                width="300"
+                height="200"
+              />
+              <div class="card-body bg-dark text-light text-center">
+                <h3 class="card-title h6">Infraestructura de red bancaria</h3>
+                <a
+                  href="./TallerDeRedes.pdf"
+                  class="btn btn-outline-light me-2"
+                  download
+                  aria-label="Descargar informe de redes"
+                >
+                  <i class="fas fa-download me-1" aria-hidden="true"></i
+                  >Descargar
+                </a>
+                <a
+                  href="./TallerDeRedes.pdf"
+                  class="btn btn-outline-warning mt-2"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Ver informe de redes online"
+                >
+                  <i class="fas fa-eye me-1" aria-hidden="true"></i>Ver Online
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Servicios Profesionales -->
+      <section
+        id="servicios"
+        class="container py-5"
+        data-aos="zoom-in-up"
+        aria-labelledby="servicios-title"
+      >
+        <h2 id="servicios-title" class="text-center text-warning mb-5 h4">
+          <i class="fas fa-tools me-2" aria-hidden="true"></i>Servicios
+          Profesionales
+        </h2>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-6 col-lg-5">
+            <article class="card shadow-lg h-100 border-0">
+              <img
+                src="./Imagenes/Mantenimientos.webp"
+                class="card-img-top rounded-top"
+                alt="Mantenimiento electrónico industrial"
+                loading="lazy"
+                width="400"
+                height="240"
+              />
+              <div class="card-body bg-dark text-light">
+                <h3 class="card-title text-center h6">
+                  Mantenimiento Industrial & Asesoría
+                </h3>
+                <p class="card-text text-center mb-0">
+                  Diagnóstico y reparación de equipos electrónicos industriales,
+                  asesoría en ensamblajes de alto rendimiento, mejora de
+                  procesos y soporte técnico especializado para empresas
+                  tecnológicas e industriales.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-5">
+            <article class="card shadow-lg h-100 border-0">
+              <img
+                src="./Imagenes/Disen.avif"
+                class="card-img-top rounded-top"
+                alt="Diseño de hardware personalizado"
+                loading="lazy"
+                width="400"
+                height="240"
+              />
+              <div class="card-body bg-dark text-light">
+                <h3 class="card-title text-center h6">
+                  Diseño & implementación de Hardware Personalizado
+                </h3>
+                <p class="card-text text-center mb-0">
+                  Desarrollo de soluciones electrónicas a medida: diseño de
+                  PCBs; integración de sensores y microcontroladores;
+                  programación de PLC y sistemas embebidos; diseño de redes de
+                  datos; e implementación de interfaces e instrumentación
+                  industrial, siempre con un enfoque en eficiencia, durabilidad
+                  y escalabilidad.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-5">
+            <article class="card shadow-lg h-100 border-0">
+              <img
+                src="./Imagenes/Software.webp"
+                class="card-img-top rounded-top"
+                alt="Diseño de software personalizado"
+                loading="lazy"
+                width="400"
+                height="240"
+              />
+              <div class="card-body bg-dark text-light">
+                <h3 class="card-title text-center h6">
+                  Diseño & implementación de Software Personalizado
+                </h3>
+                <p class="card-text text-center mb-0">
+                  Desarrollo soluciones de software empresarial aplicando
+                  metodologías ágiles como Scrum y buenas prácticas de Clean
+                  Code. Utilizo tecnologías modernas y frameworks robustos para
+                  implementar sistemas escalables en la nube, con alto nivel de
+                  seguridad, integraciones eficientes y soporte confiable. Mi
+                  enfoque está en crear aplicaciones intuitivas, sostenibles y
+                  alineadas con los objetivos estratégicos de su negocio.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Botón para descargar hoja de vida -->
+        <div class="text-center mt-5">
+          <a
+            href="./CV_Daniel_Enrique_Perdomo_Carvajal.pdf"
+            class="btn btn-warning btn-lg shadow-lg px-5 rounded-pill"
+            download
+            aria-label="Descargar hoja de vida en PDF"
+          >
+            <i class="fas fa-file-download me-2" aria-hidden="true"></i
+            >Descargar Hoja de Vida
+          </a>
+        </div>
+      </section>
+
+      <!-- Edición de video para YouTube -->
+      <section
+        id="youtube"
+        class="container py-5"
+        data-aos="fade-up"
+        aria-labelledby="youtube-title"
+      >
+        <h2 id="youtube-title" class="text-center mb-4 h4 text-warning">
+          Edición de video para YouTube
+        </h2>
+        <div class="row justify-content-center">
+          <div class="col-md-5 mb-4">
+            <article class="card h-100 shadow">
+              <a
+                href="https://www.youtube.com/watch?v=HWYyPcZUC8w"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Ver video destacado de Luis Enrique Perdomo"
+              >
+                <img
+                  src="https://img.youtube.com/vi/HWYyPcZUC8w/hqdefault.jpg"
+                  class="card-img-top"
+                  alt="Video destacado - Luis Enrique Perdomo"
+                  loading="lazy"
+                  width="480"
+                  height="360"
+                />
+              </a>
+              <div class="card-body bg-dark text-center">
+                <h3 class="card-title h6 text-light">Luis Enrique Perdomo</h3>
+                <a
+                  href="https://www.youtube.com/@luisenriqueperdomomunoz4009"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-danger"
+                  >Visitar Canal</a
+                >
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-5 mb-4">
+            <article class="card h-100 shadow">
+              <a
+                href="https://www.youtube.com/watch?v=czabtfWFyq4"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Ver video destacado de Alchiras Vlogs"
+              >
+                <img
+                  src="https://img.youtube.com/vi/czabtfWFyq4/hqdefault.jpg"
+                  class="card-img-top"
+                  alt="Video destacado - Alchiras Vlogs"
+                  loading="lazy"
+                  width="480"
+                  height="360"
+                />
+              </a>
+              <div class="card-body bg-dark text-center">
+                <h3 class="card-title h6 text-light">Alchiras Vlogs</h3>
+                <a
+                  href="https://www.youtube.com/@alchirasvlogs4052"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-danger"
+                  >Visitar Canal</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Comentarios -->
+      <section
+        id="comentarios"
+        class="container py-5"
+        data-aos="fade-up"
+        aria-labelledby="comentarios-title"
+      >
+        <div class="card shadow-lg rounded-4 p-4">
+          <h2 id="comentarios-title" class="text-center mb-4 h4 text-warning">
+            <i class="fas fa-comments me-2" aria-hidden="true"></i>Comentarios
+          </h2>
+
+          <div id="comentarios-container" class="mb-4" aria-live="polite"></div>
+
+          <div id="formulario-comentario" class="mb-4">
+            <div class="form-floating mb-3">
+              <textarea
+                class="form-control"
+                id="comentario-texto"
+                placeholder="Escribe tu comentario..."
+                aria-label="Escribe tu comentario"
+              ></textarea>
+              <label for="comentario-texto">Tu comentario</label>
+            </div>
+
+            <div
+              class="g-recaptcha mb-3"
+              data-sitekey="6Ld7oL0rAAAAALwdJ06-4m7BodInxzPrxRb5YJ4O"
+              aria-label="Verificación reCAPTCHA"
+            ></div>
+
+            <button
+              id="btn-enviar-comentario"
+              class="btn btn-warning w-100"
+              aria-label="Enviar comentario"
+            >
+              <i class="fas fa-paper-plane me-2" aria-hidden="true"></i>Enviar
+              comentario
+            </button>
+          </div>
+
+          <div id="auth-section" class="text-center">
+            <button
+              id="btn-login-google"
+              class="btn btn-outline-primary"
+              aria-label="Iniciar sesión con Google"
+            >
+              <i class="fab fa-google me-2" aria-hidden="true"></i>Iniciar
+              sesión con Google
+            </button>
+            <button
+              id="btn-logout"
+              class="btn btn-outline-danger d-none"
+              aria-label="Cerrar sesión"
+            >
+              <i class="fas fa-sign-out-alt me-2" aria-hidden="true"></i>Cerrar
+              sesión
+            </button>
+            <div id="usuario-info" class="mt-3 d-none">
+              <img
+                id="usuario-avatar"
+                src=""
+                alt="Avatar del usuario"
+                class="rounded-circle me-2"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+              <span id="usuario-nombre" class="text-light"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contacto -->
+      <section
+        id="contacto"
+        class="bg-dark text-white py-5"
+        data-aos="fade-up"
+        aria-labelledby="contacto-title"
+      >
+        <div class="container">
+          <h2 id="contacto-title" class="text-center mb-4 h4 text-warning">
+            <i class="fas fa-envelope me-2" aria-hidden="true"></i>Contacto
+          </h2>
+
+          <div class="row justify-content-center">
+            <!-- Email -->
+            <div class="col-md-3 col-sm-6 mb-4">
+              <div
+                class="card contact-card bg-transparent border-light h-100 text-center"
+              >
+                <div class="card-body">
+                  <div class="contact-icon mb-3">
+                    <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+                  </div>
+                  <h3 class="card-title h6 text-white">Correo Electrónico</h3>
+                  <p class="card-text text-light">Envíame un mensaje directo</p>
+                  <a
+                    href="mailto:danielperdomoconsultor@gmail.com"
+                    class="btn btn-outline-warning btn-sm mt-2"
+                    aria-label="Enviar correo a Daniel Perdomo"
+                  >
+                    <i class="fas fa-paper-plane me-1" aria-hidden="true"></i
+                    >Contactar
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- WhatsApp -->
+            <div class="col-md-3 col-sm-6 mb-4">
+              <div
+                class="card contact-card bg-transparent border-light h-100 text-center"
+              >
+                <div class="card-body">
+                  <div class="contact-icon mb-3">
+                    <i
+                      class="fab fa-whatsapp fa-2x text-success"
+                      aria-hidden="true"
+                    ></i>
+                  </div>
+                  <h3 class="card-title h6 text-white">WhatsApp</h3>
+                  <p class="card-text text-light">Chateemos directamente</p>
+                  <a
+                    href="https://wa.me/573158883016"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-outline-success btn-sm mt-2"
+                    aria-label="Chatear por WhatsApp"
+                  >
+                    <i class="fab fa-whatsapp me-1" aria-hidden="true"></i
+                    >Chatear
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- LinkedIn -->
+            <div class="col-md-3 col-sm-6 mb-4">
+              <div
+                class="card contact-card bg-transparent border-light h-100 text-center"
+              >
+                <div class="card-body">
+                  <div class="contact-icon mb-3">
+                    <i
+                      class="fab fa-linkedin fa-2x text-primary"
+                      aria-hidden="true"
+                    ></i>
+                  </div>
+                  <h3 class="card-title h6 text-white">LinkedIn</h3>
+                  <p class="card-text text-light">
+                    Conectemos profesionalmente
+                  </p>
+                  <a
+                    href="https://co.linkedin.com/in/daniel-enrique-perdomo-carvajal-3a472a187"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-outline-primary btn-sm mt-2"
+                    aria-label="Conectar en LinkedIn"
+                  >
+                    <i class="fab fa-linkedin me-1" aria-hidden="true"></i
+                    >Conectar
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Portafolio -->
+            <div class="col-md-3 col-sm-6 mb-4">
+              <div
+                class="card contact-card bg-transparent border-light h-100 text-center"
+              >
+                <div class="card-body">
+                  <div class="contact-icon mb-3">
+                    <i
+                      class="fas fa-globe fa-2x text-info"
+                      aria-hidden="true"
+                    ></i>
+                  </div>
+                  <h3 class="card-title h6 text-white">Portafolio</h3>
+                  <p class="card-text text-light">
+                    Explora uno de mis proyectos
+                  </p>
+                  <a
+                    href="https://superb-cobbler-c5b2fb.netlify.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-outline-info btn-sm mt-2"
+                    aria-label="Visitar portafolio"
+                  >
+                    <i
+                      class="fas fa-external-link-alt me-1"
+                      aria-hidden="true"
+                    ></i
+                    >Visitar
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulario de contacto -->
+          <div class="row justify-content-center mt-5">
+            <div class="col-lg-8">
+              <div class="card bg-transparent border-warning">
+                <div class="card-body">
+                  <h3 class="text-warning text-center mb-4 h5">
+                    <i class="fas fa-paper-plane me-2" aria-hidden="true"></i
+                    >Envíame un mensaje
+                  </h3>
+                  <form
+                    id="contactForm"
+                    class="row g-3"
+                    aria-labelledby="contacto-title"
+                  >
+                    <div class="col-md-6">
+                      <div class="form-floating">
+                        <input
+                          type="text"
+                          class="form-control bg-dark text-white border-light"
+                          id="nombre"
+                          placeholder="Tu nombre"
+                          required
+                          aria-required="true"
+                        />
+                        <label for="nombre">Tu nombre</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-floating">
+                        <input
+                          type="email"
+                          class="form-control bg-dark text-white border-light"
+                          id="correo"
+                          placeholder="Tu correo"
+                          required
+                          aria-required="true"
+                        />
+                        <label for="correo">Tu correo</label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-floating">
+                        <textarea
+                          class="form-control bg-dark text-white border-light"
+                          placeholder="Tu mensaje"
+                          id="mensaje"
+                          style="height: 120px"
+                          required
+                          aria-required="true"
+                        ></textarea>
+                        <label for="mensaje"
+                          >Tu mensaje</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col-12 text-center">
+                      <button
+                        type="submit"
+                        class="btn btn-warning px-4"
+                        aria-label="Enviar mensaje de contacto"
+                      >
+                        <i
+                          class="fas fa-paper-plane me-2"
+                          aria-hidden="true"
+                        ></i
+                        >Enviar Mensaje
+                      </button>
+                    </div>
+                    <div id="formAlert" class="mt-2" aria-live="polite"></div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Modal Foto -->
+    <div
+      class="modal fade"
+      id="modalFoto"
+      tabindex="-1"
+      aria-labelledby="modalFotoLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark text-white">
+          <div class="modal-header border-0">
+            <h3 class="modal-title h5" id="modalFotoLabel">
+              Daniel Enrique Perdomo Carvajal - Ingeniero Electrónico
+            </h3>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar modal"
+            ></button>
+          </div>
+          <div class="modal-body text-center">
+            <img
+              src="/Imagenes/FotoDePerfil.png"
+              alt="Daniel Perdomo - Foto de perfil ampliada"
+              class="img-fluid rounded-4 shadow"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script
+      src="https://www.recaptcha.net/recaptcha/api.js?render=explicit&onload=onRecaptchaLoad"
+      async
+      defer
+    ></script>
+    <script
+      nonce="<%= nonce %>"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      nonce="<%= nonce %>"
+      src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"
+      crossorigin="anonymous"
+    ></script>
+    <script nonce="<%= nonce %>" src="/js/app.js" defer></script>
+
+    <footer class="bg-dark text-center text-white py-3 mt-4">
+      <p class="mb-0 small">
+        &copy; 2025 Daniel Enrique Perdomo Carvajal · Todos los derechos
+        reservados
+      </p>
+    </footer>
+  </body>
+</html>
