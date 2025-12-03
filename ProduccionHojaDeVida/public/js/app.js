@@ -1125,7 +1125,8 @@ class App {
                 this.initHeroSlider(),
                 this.initAuth(),
                 this.initComments(),
-                this.initContactForm()
+                this.initContactForm(),
+                this.initGitHub()
             ]);
 
             this.setupHeroAnimations();
@@ -1165,6 +1166,12 @@ class App {
 
     async initContactForm() {
         this.modules.set('contact', new ContactFormManager());
+    }
+
+    async initGitHub() {
+        const githubManager = new GitHubManager();
+        await githubManager.init();
+        this.modules.set('github', githubManager);
     }
 
     showLoader() {
@@ -1246,6 +1253,206 @@ class App {
             }
         });
         this.modules.clear();
+    }
+}
+
+// GitHub Portfolio Manager
+class GitHubManager {
+    constructor() {
+        this.username = 'Danielperdomo29';
+        this.reposContainer = getElement('github-repos');
+        this.maxRepos = 6;
+    }
+
+    async init() {
+        if (!this.reposContainer) return;
+
+        try {
+            await this.loadRepositories();
+        } catch (error) {
+            console.error('Error loading GitHub repos:', error);
+            this.showError();
+        }
+    }
+
+    async loadRepositories() {
+        try {
+            const response = await fetch(`https://api.github.com/users/${this.username}/repos?sort=updated&per_page=100`);
+
+            if (!response.ok) {
+                throw new Error(`GitHub API error: ${response.status}`);
+            }
+
+            const repos = await response.json();
+
+            // Filtrar y ordenar repositorios
+            const featuredRepos = repos
+                .filter(repo => !repo.fork && !repo.private)
+                .sort((a, b) => {
+                    // Priorizar por stars, luego por última actualización
+                    if (b.stargazers_count !== a.stargazers_count) {
+                        return b.stargazers_count - a.stargazers_count;
+                    }
+                    return new Date(b.updated_at) - new Date(a.updated_at);
+                })
+                .slice(0, this.maxRepos);
+
+            this.renderRepositories(featuredRepos);
+        } catch (error) {
+            console.error('Error fetching repositories:', error);
+            this.showError();
+        }
+    }
+
+    renderRepositories(repos) {
+        if (!repos || repos.length === 0) {
+            this.showNoRepos();
+            return;
+        }
+
+        this.reposContainer.innerHTML = '';
+
+        repos.forEach(repo => {
+            const repoCard = this.createRepoCard(repo);
+            this.reposContainer.appendChild(repoCard);
+        });
+    }
+
+    createRepoCard(repo) {
+        const col = createSafeElement('div', 'col-md-6 col-lg-4');
+
+        const card = createSafeElement('article', 'card h-100 shadow-lg border-0');
+        card.style.cssText = `
+            background: linear-gradient(145deg, rgba(30, 30, 30, 0.95) 0%, rgba(20, 20, 20, 0.98) 100%);
+            border: 1px solid rgba(255, 204, 0, 0.2) !important;
+            transition: all 0.3s ease;
+        `;
+
+        card.addEventListener('mouseenter', function () {
+            this.style.transform = 'translateY(-8px)';
+            this.style.boxShadow = '0 12px 30px rgba(255, 204, 0, 0.3)';
+        });
+
+        card.addEventListener('mouseleave', function () {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '';
+        });
+
+        const cardBody = createSafeElement('div', 'card-body d-flex flex-column');
+
+        // Nombre del repositorio
+        const titleLink = createSafeElement('a', 'text-decoration-none mb-2');
+        titleLink.href = repo.html_url;
+        titleLink.target = '_blank';
+        titleLink.rel = 'noopener noreferrer';
+
+        const title = createSafeElement('h3', 'card-title h6 text-warning mb-2');
+        title.innerHTML = `<i class="fab fa-github me-2"></i>${sanitizeText(repo.name)}`;
+        titleLink.appendChild(title);
+
+        // Descripción
+        const description = createSafeElement('p', 'card-text text-light flex-grow-1');
+        description.textContent = repo.description || 'Sin descripción';
+        description.style.fontSize = '0.9rem';
+
+        // Stats container
+        const statsDiv = createSafeElement('div', 'd-flex justify-content-between align-items-center mt-3 pt-3');
+        statsDiv.style.borderTop = '1px solid rgba(255, 255, 255, 0.1)';
+
+        // Language badge
+        const langBadge = createSafeElement('span', 'badge');
+        if (repo.language) {
+            const langColor = this.getLanguageColor(repo.language);
+            langBadge.style.cssText = `
+                background-color: ${langColor};
+                color: white;
+                padding: 0.25rem 0.75rem;
+                border-radius: 12px;
+                font-size: 0.75rem;
+            `;
+            langBadge.textContent = repo.language;
+        }
+
+        // Stars and forks
+        const iconsDiv = createSafeElement('div', 'd-flex gap-3');
+
+        if (repo.stargazers_count > 0) {
+            const stars = createSafeElement('span', 'text-warning');
+            stars.style.fontSize = '0.85rem';
+            stars.innerHTML = `<i class="fas fa-star me-1"></i>${repo.stargazers_count}`;
+            iconsDiv.appendChild(stars);
+        }
+
+        if (repo.forks_count > 0) {
+            const forks = createSafeElement('span', 'text-light');
+            forks.style.fontSize = '0.85rem';
+            forks.innerHTML = `<i class="fas fa-code-branch me-1"></i>${repo.forks_count}`;
+            iconsDiv.appendChild(forks);
+        }
+
+        statsDiv.appendChild(langBadge);
+        statsDiv.appendChild(iconsDiv);
+
+        // Ver repositorio button
+        const btnDiv = createSafeElement('div', 'mt-3');
+        const viewBtn = createSafeElement('a', 'btn btn-outline-warning btn-sm w-100');
+        viewBtn.href = repo.html_url;
+        viewBtn.target = '_blank';
+        viewBtn.rel = 'noopener noreferrer';
+        viewBtn.innerHTML = '<i class="fas fa-external-link-alt me-2"></i>Ver Repositorio';
+        btnDiv.appendChild(viewBtn);
+
+        cardBody.appendChild(titleLink);
+        cardBody.appendChild(description);
+        cardBody.appendChild(statsDiv);
+        cardBody.appendChild(btnDiv);
+        card.appendChild(cardBody);
+        col.appendChild(card);
+
+        return col;
+    }
+
+    getLanguageColor(language) {
+        const colors = {
+            'JavaScript': '#f1e05a',
+            'TypeScript': '#2b7489',
+            'Python': '#3572A5',
+            'Java': '#b07219',
+            'C++': '#f34b7d',
+            'C': '#555555',
+            'HTML': '#e34c26',
+            'CSS': '#563d7c',
+            'PHP': '#4F5D95',
+            'Ruby': '#701516',
+            'Go': '#00ADD8',
+            'Rust': '#dea584',
+            'Shell': '#89e051',
+            'Kotlin': '#F18E33',
+            'Swift': '#ffac45'
+        };
+        return colors[language] || '#8b949e';
+    }
+
+    showError() {
+        this.reposContainer.innerHTML = `
+            <div class="col-12 text-center">
+                <div class="alert alert-warning" role="alert">
+                    <i class="fas fa-exclamation-triangle me-2"></i>
+                    No se pudieron cargar los repositorios. 
+                    <a href="https://github.com/${this.username}" target="_blank" rel="noopener" class="alert-link">
+                        Visita mi GitHub directamente
+                    </a>
+                </div>
+            </div>
+        `;
+    }
+
+    showNoRepos() {
+        this.reposContainer.innerHTML = `
+            <div class="col-12 text-center text-light">
+                <p>No hay repositorios públicos disponibles en este momento.</p>
+            </div>
+        `;
     }
 }
 

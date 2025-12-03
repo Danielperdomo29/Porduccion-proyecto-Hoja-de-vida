@@ -100,8 +100,10 @@ const getHelmetConfig = (nonce) => ({
                 "https://cdnjs.cloudflare.com",
                 `'nonce-${nonce}'`,
                 "'unsafe-inline'",
-                "'unsafe-eval'"
+                "'unsafe-eval'",
+                "'unsafe-hashes'"
             ],
+            scriptSrcAttr: ["'unsafe-inline'", "'unsafe-hashes'"],
             styleSrc: [
                 "'self'",
                 "'unsafe-inline'",
@@ -130,7 +132,8 @@ const getHelmetConfig = (nonce) => ({
                 "https://cdn.jsdelivr.net",
                 "https://cdnjs.cloudflare.com",
                 "https://www.cloudflare.com",
-                "https://api.ipify.org"
+                "https://api.ipify.org",
+                "https://api.github.com"
             ],
             imgSrc: [
                 "'self'",
@@ -144,7 +147,11 @@ const getHelmetConfig = (nonce) => ({
                 "https://d33wubrfki0l68.cloudfront.net",
                 "https://drive.google.com",
                 "https://www.google.com",
-                "https://www.gstatic.com"
+                "https://www.gstatic.com",
+                "https://github-readme-stats.vercel.app",
+                "https://github-readme-streak-stats.herokuapp.com",
+                "https://github-readme-activity-graph.vercel.app",
+                "https://github-profile-trophy.vercel.app"
             ],
             frameSrc: [
                 "'self'",

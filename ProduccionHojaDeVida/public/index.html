@@ -95,25 +95,28 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#perfil">Perfil</a>
+              <a class="nav-link" href="#perfil"><i class="fas fa-user me-1"></i>Perfil</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#experiencia">Experiencia</a>
+              <a class="nav-link" href="#experiencia"><i class="fas fa-briefcase me-1"></i>Experiencia</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#habilidades">Habilidades</a>
+              <a class="nav-link" href="#habilidades"><i class="fas fa-tools me-1"></i>Habilidades</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#proyectos">Proyectos</a>
+              <a class="nav-link" href="#proyectos"><i class="fas fa-laptop-code me-1"></i>Proyectos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#videos">Videos</a>
+              <a class="nav-link" href="#videos"><i class="fas fa-video me-1"></i>Videos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#comentarios">Comentarios</a>
+              <a class="nav-link" href="#github"><i class="fab fa-github me-1"></i>GitHub</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#contacto">Contacto</a>
+              <a class="nav-link" href="#comentarios"><i class="fas fa-comments me-1"></i>Comentarios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contacto"><i class="fas fa-envelope me-1"></i>Contacto</a>
             </li>
           </ul>
         </div>
@@ -983,6 +986,156 @@
         </div>
       </section>
 
+      <!-- GitHub Portfolio Section -->
+      <section
+        id="github"
+        class="container py-5"
+        data-aos="fade-up"
+        aria-labelledby="github-title"
+      >
+        <h2 id="github-title" class="text-center mb-4 h4 text-warning">
+          <i class="fab fa-github me-2" aria-hidden="true"></i>GitHub Portfolio
+        </h2>
+        
+        <div class="text-center mb-4">
+          <a 
+            href="https://github.com/Danielperdomo29" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="btn btn-outline-light btn-lg"
+          >
+            <i class="fab fa-github me-2"></i>Visitar mi GitHub
+          </a>
+        </div>
+
+        <!-- GitHub Stats Cards -->
+        <div class="row g-4 mb-5">
+          <div class="col-md-6">
+            <div class="card shadow-lg rounded-4 p-4 h-100 bg-dark border-warning">
+              <div class="text-center">
+                <h3 class="h5 text-warning mb-3">
+                  <i class="fas fa-chart-line me-2"></i>Estadísticas de GitHub
+                </h3>
+                <img 
+                  src="https://github-readme-stats.vercel.app/api?username=Danielperdomo29&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=ffcc00&text_color=ffffff&icon_color=ffcc00"
+                  alt="Estadísticas de GitHub de Daniel Perdomo"
+                  class="img-fluid rounded"
+                  loading="lazy"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+                />
+                <div style="display: none;">
+                  <div id="github-stats-card">
+                    <div class="text-center py-4">
+                      <div class="spinner-border text-warning" role="status">
+                        <span class="visually-hidden">Cargando...</span>
+                      </div>
+                      <p class="text-light mt-2 mb-0">Cargando estadísticas...</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card shadow-lg rounded-4 p-4 h-100 bg-dark border-warning">
+              <div class="text-center">
+                <h3 class="h5 text-warning mb-3">
+                  <i class="fas fa-code me-2"></i>Lenguajes Más Usados
+                </h3>
+                <img 
+                  src="https://github-readme-stats.vercel.app/api/top-langs/?username=Danielperdomo29&layout=compact&theme=dark&hide_border=true&bg_color=0d1117&title_color=ffcc00&text_color=ffffff"
+                  alt="Lenguajes más usados por Daniel Perdomo"
+                  class="img-fluid rounded"
+                  loading="lazy"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+                />
+                <div style="display: none;">
+                  <div id="github-langs-card">
+                    <div class="text-center py-4">
+                      <div class="spinner-border text-warning" role="status">
+                        <span class="visually-hidden">Cargando...</span>
+                      </div>
+                      <p class="text-light mt-2 mb-0">Cargando lenguajes...</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GitHub Streak -->
+        <div class="row g-4 mb-5">
+          <div class="col-12">
+            <div class="card shadow-lg rounded-4 p-4 bg-dark border-warning">
+              <div class="text-center">
+                <h3 class="h5 text-warning mb-3">
+                  <i class="fas fa-fire me-2"></i>Racha de Contribuciones
+                </h3>
+                <img 
+                  src="https://github-readme-streak-stats.herokuapp.com/?user=Danielperdomo29&theme=dark&hide_border=true&background=0d1117&ring=ffcc00&fire=ffcc00&currStreakLabel=ffcc00"
+                  alt="Racha de contribuciones de Daniel Perdomo"
+                  class="img-fluid rounded"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repositorios Destacados -->
+        <h3 class="h5 text-warning mb-4 text-center">
+          <i class="fas fa-star me-2"></i>Repositorios Destacados
+        </h3>
+        <div id="github-repos" class="row g-4">
+          <!-- Los repositorios se cargarán dinámicamente aquí -->
+          <div class="col-12 text-center">
+            <div class="spinner-border text-warning" role="status">
+              <span class="visually-hidden">Cargando repositorios...</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- GitHub Contribution Graph -->
+        <div class="row g-4 mt-4">
+          <div class="col-12">
+            <div class="card shadow-lg rounded-4 p-4 bg-dark border-warning">
+              <div class="text-center">
+                <h3 class="h5 text-warning mb-3">
+                  <i class="fas fa-calendar-alt me-2"></i>Actividad de Contribuciones
+                </h3>
+                <img 
+                  src="https://github-readme-activity-graph.vercel.app/graph?username=Danielperdomo29&bg_color=0d1117&color=ffcc00&line=ffcc00&point=ffffff&area=true&hide_border=true"
+                  alt="Gráfico de actividad de GitHub de Daniel Perdomo"
+                  class="img-fluid rounded"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GitHub Trophies -->
+        <div class="row g-4 mt-4">
+          <div class="col-12">
+            <div class="card shadow-lg rounded-4 p-4 bg-dark border-warning">
+              <div class="text-center">
+                <h3 class="h5 text-warning mb-3">
+                  <i class="fas fa-trophy me-2"></i>Logros de GitHub
+                </h3>
+                <img 
+                  src="https://github-profile-trophy.vercel.app/?username=Danielperdomo29&theme=darkhub&no-frame=true&no-bg=true&column=4&margin-w=15&margin-h=15"
+                  alt="Trofeos de GitHub de Daniel Perdomo"
+                  class="img-fluid"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Comentarios -->
       <section
         id="comentarios"
@@ -1313,6 +1466,7 @@
       crossorigin="anonymous"
     ></script>
     <script nonce="<%= nonce %>" src="/js/app.js" defer></script>
+    <script nonce="<%= nonce %>" src="/js/github-portfolio.js" defer></script>
 
     <footer class="bg-dark text-center text-white py-3 mt-4">
       <p class="mb-0 small">

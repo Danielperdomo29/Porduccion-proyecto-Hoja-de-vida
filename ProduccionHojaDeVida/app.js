@@ -12,6 +12,7 @@ const crypto = require("crypto");
 // Importar middlewares de seguridad
 const advancedObfuscation = require('./middlewares/security/obfuscation');
 const honeyPotSystem = require('./middlewares/security/honeypot');
+const forbiddenRoutesProtection = require('./middlewares/security/forbiddenRoutes');
 const OWASPDefender = require('./services/security/OWASPDefender');
 const { errorHandler, maliciousUrlCatcher, notFoundHandler } = require('./middlewares/securityHandlers');
 const { getHelmetConfig, corsOptions } = require('./config/securityConfig');
@@ -38,6 +39,9 @@ app.use(advancedObfuscation);
 
 // Honeypot
 app.use(honeyPotSystem);
+
+// Forbidden routes protection (403)
+app.use(forbiddenRoutesProtection);
 
 // Security handlers
 app.use(maliciousUrlCatcher);

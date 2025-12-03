@@ -223,7 +223,8 @@ class SecurityResponseManager {
             access_denied: this.generateAccessDeniedPage(incidentId, details),
             not_found: this.generateNotFoundPage(incidentId, details),
             rate_limit: this.generateRateLimitPage(incidentId, details),
-            honeypot_triggered: this.generateHoneypotPage(incidentId, details)
+            honeypot_triggered: this.generateHoneypotPage(incidentId, details),
+            forbidden_route: this.generateForbiddenRoutePage(incidentId, details)
         };
 
         // Detectar si es un honeypot y usar la página específica
@@ -446,6 +447,171 @@ class SecurityResponseManager {
         console.warn('🔒 Security Incident: ${incidentId} - Malicious URL blocked');
     </script>
     ${this.getIpDetectionScript()}
+</body>
+</html>
+        `;
+    }
+
+    /**
+     * Página 403 Forbidden para rutas sensibles
+     */
+    generateForbiddenRoutePage(incidentId, details) {
+        return `
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Prohibido - Sistema de Seguridad</title>
+    <style>
+        \${this.getSecurityCSS()}
+        .forbidden-info {
+            background: rgba(255, 68, 68, 0.1);
+            border: 1px solid rgba(255, 68, 68, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            text-align: left;
+        }
+        .path-blocked {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 0.8rem;
+            border-radius: 8px;
+            border-left: 4px solid #ff4444;
+            margin: 1rem 0;
+            word-break: break-all;
+            font-family: 'Courier New', monospace;
+        }
+        .lock-icon {
+            font-size: 4rem;
+            animation: shake 2s ease-in-out infinite;
+        }
+        @keyframes shake {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-10deg); }
+            75% { transform: rotate(10deg); }
+        }
+        .security-badge {
+            display: inline-block;
+            background: rgba(255, 68, 68, 0.2);
+            color: #ff4444;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="security-container">
+        <div class="lock-icon">🔒</div>
+        <h1>ACCESO PROHIBIDO</h1>
+        <p class="subtitle">Error 403 - Recurso Protegido por Seguridad</p>
+        
+        <div class="forbidden-info">
+            <h3>🚫 ACCESO DENEGADO A RECURSO SENSIBLE</h3>
+            <p>El recurso al que intentas acceder está protegido por nuestro sistema de seguridad.</p>
+            
+            <div class="path-blocked">
+                <strong>Ruta bloqueada:</strong><br>
+                \${details.path}
+            </div>
+            
+            <div class="security-badge">
+                ⚠️ INCIDENTE DE SEGURIDAD REGISTRADO
+            </div>
+            
+            <div class="incident-details">
+                <div class="detail-item">
+                    <strong>ID del Incidente:</strong>
+                    <span class="incident-id">\${incidentId}</span>
+                </div>
+                <div class="detail-item">
+                    <strong>Tipo:</strong>
+                    <span class="incident-type">Acceso a Recurso Prohibido (403 Forbidden)</span>
+                </div>
+                <div class="detail-item">
+                    <strong>Timestamp:</strong>
+                    <span class="incident-time">\${new Date().toLocaleString('es-ES')}</span>
+                </div>
+                <div class="detail-item">
+                    <strong>Dirección IP:</strong>
+                    <span class="public-ip-display">\${details.ip}</span>
+                </div>
+                <div class="detail-item">
+                    <strong>Método HTTP:</strong>
+                    <span>\${details.method || 'GET'}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="security-info">
+            <h4>¿Por qué veo este error?</h4>
+            <p>Has intentado acceder a un recurso que está clasificado como sensible y no es accesible públicamente por razones de seguridad.</p>
+            
+            <h4>Tipos de Recursos Protegidos:</h4>
+            <ul>
+                <li><strong>Archivos de log</strong> - Registros del sistema</li>
+                <li><strong>Archivos de configuración</strong> - Variables de entorno y credenciales</li>
+                <li><strong>Archivos de backup</strong> - Copias de seguridad de la base de datos</li>
+                <li><strong>Directorios del sistema</strong> - Carpetas internas del servidor</li>
+                <li><strong>Información administrativa</strong> - Paneles y herramientas de administración</li>
+            </ul>
+
+            <h4>¿Qué se ha registrado?</h4>
+            <ul>
+                <li>✅ Tu dirección IP pública ha sido registrada</li>
+                <li>✅ La ruta exacta que intentaste acceder</li>
+                <li>✅ Información del navegador y sistema operativo</li>
+                <li>✅ Hora exacta del intento de acceso</li>
+            </ul>
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn btn-primary" onclick="window.location.href='/'">
+                🏠 Volver al Inicio Seguro
+            </button>
+            <button class="btn btn-secondary" onclick="window.history.back()">
+                ← Página Anterior
+            </button>
+            <button class="btn btn-tertiary" onclick="window.close()">
+                ✕ Cerrar Pestaña
+            </button>
+        </div>
+
+        <div class="security-footer">
+            <p>Sistema de Seguridad Activo · Incidente: \${incidentId} · \${new Date().getFullYear()}</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem;">
+                Si crees que este es un error, <a href="/#contacto" style="color: #ffcc00;">contacta al administrador</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.origin + '/');
+        }
+        
+        console.warn('🔒 Security Incident: \${incidentId} - 403 Forbidden - Attempted access to: \${details.path}');
+        
+        setTimeout(() => {
+            console.log('🛡️ Sistema de seguridad activo - Todos los accesos son monitoreados');
+        }, 1500);
+        
+        const blockedFunctions = ['eval', 'setTimeout', 'setInterval', 'Function'];
+        blockedFunctions.forEach(func => {
+            const original = window[func];
+            window[func] = function(...args) {
+                if (func === 'setTimeout' && args[0] && args[0].toString().includes('getPublicIP')) {
+                    return original.apply(this, args);
+                }
+                console.warn('🔒 Función bloqueada por seguridad:', func);
+                return null;
+            };
+        });
+    </script>
+    \${this.getIpDetectionScript()}
 </body>
 </html>
         `;
