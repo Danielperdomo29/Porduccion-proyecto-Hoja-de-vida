@@ -719,13 +719,20 @@ class AuthManager {
             });
 
             if (response.ok) {
-                const user = await response.json();
+                const data = await response.json();
+                // El backend ahora devuelve { user: ... } o { user: null } con status 200
+                // para evitar errores 401 en la consola
+                const user = data.user || (data.id ? data : null); // Soporte híbrido
+
                 this.updateUI(user);
                 return user;
             } else {
-                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                // Si por alguna razón sigue llegando un error (ej: 500), lo manejamos silenciosamente
+                this.updateUI(null);
+                return null;
             }
         } catch (error) {
+            // Error de red silencioso
             this.updateUI(null);
             return null;
         }

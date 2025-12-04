@@ -70,7 +70,6 @@ app.use(mongoSanitize({
         console.warn(`⚠️ Sanitized key: ${key} in request from ${req.ip}`);
     }
 }));
-
 // HPP
 app.use(hpp({
     whitelist: ['filter', 'sort', 'page', 'limit']
@@ -78,8 +77,8 @@ app.use(hpp({
 
 // Custom security headers for A+ rating
 app.use((req, res, next) => {
-    // Permissions Policy: Restrict sensitive features
-    res.setHeader('Permissions-Policy', 'geolocation=(), microphone=(), camera=(), payment=(), usb=(), vr=(), interest-cohort=()');
+    // Permissions Policy: Restrict sensitive features (Standard list)
+    res.setHeader('Permissions-Policy', 'geolocation=(), microphone=(), camera=(), payment=(), usb=(), fullscreen=(), autoplay=()');
 
     // Additional hardening not covered by Helmet default
     res.setHeader('X-Content-Type-Options', 'nosniff');

@@ -77,6 +77,20 @@
       .timeline-item:last-child {
         border-left: 2px solid transparent;
       }
+      
+      /* Nueva tarjeta con degradado suave para experiencia */
+      .timeline-card {
+        background: linear-gradient(145deg, rgba(20, 20, 20, 0.9), rgba(35, 35, 35, 0.8));
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        padding: 1.5rem;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+      }
+      .timeline-card:hover {
+        transform: translateY(-3px);
+        border-color: rgba(255, 204, 0, 0.3);
+      }
 
       /* Navbar Brand Update */
       .navbar-brand span {
@@ -225,50 +239,58 @@
             <div class="col-lg-10">
               
               <div class="timeline-item" data-aos="fade-up">
-                <span class="text-warning font-code small">2023 - 2025</span>
-                <h3 class="h4 text-light mt-1">Ingeniero de Automatización y Desarrollo</h3>
-                <h4 class="h6 text-muted">Coasquímicos S.A.S</h4>
-                <p class="text-light mt-3 text-justify">
-                  Como Ingeniero de Automatización y Desarrollo, orquesté una transformación DevOps integral diseñando e implementando pipelines de automatización industrial mediante microcontroladores que reemplazaron costosos PLCs. Desarrollé y desplegué una plataforma web de ventas con stack moderno (HTML5, CSS3, JS ES6+, TypeScript) que incrementó los ingresos en un 65%. Bajo principios de IaC, implementé una plataforma interna con enfoque DevSecOps, integrando la triada CIA en el ciclo de vida del desarrollo mediante controles de seguridad automatizados. Gestioné la infraestructura tecnológica con enfoque CI/CD usando Kubernetes (Master/Worker Nodes, Kubelet, Container Runtime, Service Discovery), optimizando procesos industriales y digitales mediante automatización y monitorización proactiva, estableciendo una cultura DevOps que aseguró la resiliencia operacional.
-                </p>
-                <div class="d-flex gap-2 mt-2 flex-wrap">
-                  <span class="badge bg-dark border border-secondary">DevSecOps</span>
-                  <span class="badge bg-dark border border-secondary">Kubernetes</span>
-                  <span class="badge bg-dark border border-secondary">IoT</span>
-                  <span class="badge bg-dark border border-secondary">CI/CD</span>
+                <div class="timeline-card">
+                  <span class="text-warning font-code small">2023 - 2025</span>
+                  <h3 class="h4 text-light mt-1">Ingeniero de Automatización y Desarrollo</h3>
+                  <h4 class="h6 text-muted">Coasquímicos S.A.S</h4>
+                  <p class="text-light mt-3 text-justify small">
+                    Como Ingeniero de Automatización y Desarrollo, orquesté una transformación DevOps integral diseñando e implementando pipelines de automatización industrial mediante microcontroladores que reemplazaron costosos PLCs. Desarrollé y desplegué una plataforma web de ventas con stack moderno (HTML5, CSS3, JS ES6+, TypeScript) que incrementó los ingresos en un 65%. Bajo principios de IaC, implementé una plataforma interna con enfoque DevSecOps, integrando la triada CIA en el ciclo de vida del desarrollo mediante controles de seguridad automatizados. Gestioné la infraestructura tecnológica con enfoque CI/CD usando Kubernetes (Master/Worker Nodes, Kubelet, Container Runtime, Service Discovery), optimizando procesos industriales y digitales mediante automatización y monitorización proactiva, estableciendo una cultura DevOps que aseguró la resiliencia operacional.
+                  </p>
+                  <div class="d-flex gap-2 mt-2 flex-wrap">
+                    <span class="badge bg-dark border border-secondary">DevSecOps</span>
+                    <span class="badge bg-dark border border-secondary">Kubernetes</span>
+                    <span class="badge bg-dark border border-secondary">IoT</span>
+                    <span class="badge bg-dark border border-secondary">CI/CD</span>
+                  </div>
                 </div>
               </div>
 
               <div class="timeline-item" data-aos="fade-up">
-                <span class="text-warning font-code small">2024</span>
-                <h3 class="h4 text-light mt-1">Desarrollador Full-Stack Freelance</h3>
-                <h4 class="h6 text-muted">CRM Licitaciones KJC</h4>
-                <p class="text-light mt-3">
-                  Arquitectura y desarrollo de un CRM personalizado para gestión de licitaciones gubernamentales. Implementación de automatización de documentos y sistema de alertas inteligentes.
-                </p>
-                <div class="d-flex gap-2 mt-2 flex-wrap">
-                  <span class="badge bg-dark border border-secondary">React</span>
-                  <span class="badge bg-dark border border-secondary">Node.js</span>
-                  <span class="badge bg-dark border border-secondary">CRM</span>
+                <div class="timeline-card">
+                  <span class="text-warning font-code small">2024</span>
+                  <h3 class="h4 text-light mt-1">Desarrollador Full-Stack Freelance</h3>
+                  <h4 class="h6 text-muted">CRM Licitaciones KJC</h4>
+                  <p class="text-light mt-3 small">
+                    Arquitectura y desarrollo de un CRM personalizado para gestión de licitaciones gubernamentales. Implementación de automatización de documentos y sistema de alertas inteligentes.
+                  </p>
+                  <div class="d-flex gap-2 mt-2 flex-wrap">
+                    <span class="badge bg-dark border border-secondary">React</span>
+                    <span class="badge bg-dark border border-secondary">Node.js</span>
+                    <span class="badge bg-dark border border-secondary">CRM</span>
+                  </div>
                 </div>
               </div>
 
               <div class="timeline-item" data-aos="fade-up">
-                <span class="text-warning font-code small">Oct 2024 - Dic 2024</span>
-                <h3 class="h4 text-light mt-1">Ingeniero de Proyectos</h3>
-                <h4 class="h6 text-muted">Grupo Empresarial Recicla S.A.S.</h4>
-                <p class="text-light mt-3">
-                  Diseñé e implementé un Sistema de Información Geográfica (SIG) utilizando QGIS para la optimización de rutas de recolección, cumpliendo con la normativa SUI.
-                </p>
+                <div class="timeline-card">
+                  <span class="text-warning font-code small">Oct 2024 - Dic 2024</span>
+                  <h3 class="h4 text-light mt-1">Ingeniero de Proyectos</h3>
+                  <h4 class="h6 text-muted">Grupo Empresarial Recicla S.A.S.</h4>
+                  <p class="text-light mt-3 small">
+                    Diseñé e implementé un Sistema de Información Geográfica (SIG) utilizando QGIS para la optimización de rutas de recolección, cumpliendo con la normativa SUI.
+                  </p>
+                </div>
               </div>
 
               <div class="timeline-item" data-aos="fade-up">
-                <span class="text-warning font-code small">2019 - 2025</span>
-                <h3 class="h4 text-light mt-1">Consultor TI & Desarrollador</h3>
-                <h4 class="h6 text-muted">EcoSmile S.A.S.</h4>
-                <p class="text-light mt-3">
-                  Consultoría técnica en sistemas sostenibles y desarrollo de aplicaciones web. Gestión de infraestructura tecnológica y soporte avanzado.
-                </p>
+                <div class="timeline-card">
+                  <span class="text-warning font-code small">2019 - 2025</span>
+                  <h3 class="h4 text-light mt-1">Consultor TI & Desarrollador</h3>
+                  <h4 class="h6 text-muted">EcoSmile S.A.S.</h4>
+                  <p class="text-light mt-3 small">
+                    Consultoría técnica en sistemas sostenibles y desarrollo de aplicaciones web. Gestión de infraestructura tecnológica y soporte avanzado.
+                  </p>
+                </div>
               </div>
 
             </div>
@@ -373,8 +395,11 @@
                   height="220"
                 />
               </a>
-              <div class="card-body bg-dark text-light text-center">
-                <h3 class="card-title h6">Asistente de IA</h3>
+              <div class="card-body bg-dark text-light text-start">
+                <h3 class="card-title h6 text-center text-warning">Asistente de IA</h3>
+                <p class="card-text small mt-3">
+                  Esta plataforma de Asistente de IA opera bajo una arquitectura JAMstack/SPA (Single Page Application) desplegada globalmente en Netlify, lo que garantiza una carga ultrarrápida. El cliente está construido con HTML5, Vanilla JavaScript y el framework Tailwind CSS. La funcionalidad de inteligencia artificial se logra mediante la comunicación asíncrona (Fetch API) desde el frontend hacia un servicio de IA externo (API de LLM).
+                </p>
               </div>
             </article>
           </div>
@@ -396,8 +421,11 @@
                   height="220"
                 />
               </a>
-              <div class="card-body bg-dark text-light text-center">
-                <h3 class="card-title h6">Carrito de compras</h3>
+              <div class="card-body bg-dark text-light text-start">
+                <h3 class="card-title h6 text-center text-warning">Carrito de compras</h3>
+                <p class="card-text small mt-3">
+                  Esta plataforma simula un catálogo de e-commerce bajo una arquitectura JAMstack/SPA desplegada en Netlify, asegurando entrega global de alta velocidad. El sistema está construido con HTML5 y Vanilla JavaScript (app.js), utilizando técnicas de programación funcional para implementar un robusto buscador dinámico con filtros encadenados sobre un catálogo de productos (db.js). Implementa persistencia de sesión mediante el uso estratégico de localStorage. El diseño responsive y modular se logra con Skeleton CSS y Normalize CSS.
+                </p>
               </div>
             </article>
           </div>
@@ -419,8 +447,11 @@
                   height="220"
                 />
               </a>
-              <div class="card-body bg-dark text-light text-center">
-                <h3 class="card-title h6">CRM Administrativo</h3>
+              <div class="card-body bg-dark text-light text-start">
+                <h3 class="card-title h6 text-center text-warning">CRM Administrativo</h3>
+                <p class="card-text small mt-3">
+                  Esta plataforma de CRM opera como una SPA desplegada en Netlify. El núcleo está construido con HTML5 y Vanilla JavaScript, demostrando habilidades en manipulación del DOM y operaciones CRUD completas. El principal diferenciador técnico es el uso de IndexedDB, una base de datos NoSQL local del navegador, permitiendo almacenamiento persistente sin backend tradicional. Diseño responsive con Bootstrap 4.
+                </p>
               </div>
             </article>
           </div>
@@ -442,8 +473,11 @@
                   height="220"
                 />
               </a>
-              <div class="card-body bg-dark text-light text-center">
-                <h3 class="card-title h6">Buscador de autos</h3>
+              <div class="card-body bg-dark text-light text-start">
+                <h3 class="card-title h6 text-center text-warning">Buscador de autos</h3>
+                <p class="card-text small mt-3">
+                  Aplicación SPA de filtrado de datos en tiempo real desplegada en Netlify. Construida con JavaScript Moderno (ES6+), destaca por la implementación de algoritmos de búsqueda eficientes utilizando High Order Functions (filter, map, reduce) para procesar grandes conjuntos de datos JSON. La interfaz dinámica reacciona instantáneamente a múltiples criterios de filtrado simultáneos, demostrando una gestión optimizada del DOM y eventos.
+                </p>
               </div>
             </article>
           </div>
@@ -465,8 +499,11 @@
                   height="220"
                 />
               </a>
-              <div class="card-body bg-dark text-light text-center">
-                <h3 class="card-title h6">Cotizador de seguros</h3>
+              <div class="card-body bg-dark text-light text-start">
+                <h3 class="card-title h6 text-center text-warning">Cotizador de seguros</h3>
+                <p class="card-text small mt-3">
+                  Aplicación de lógica de negocios desplegada en Netlify. Desarrollada con un enfoque en Programación Orientada a Objetos (POO) utilizando Prototypes en JavaScript para modelar entidades y cálculos actuariales complejos. La arquitectura separa limpiamente la lógica de datos de la interfaz de usuario (UI), garantizando un código mantenible y escalable. Utiliza Skeleton CSS para una presentación ligera y rápida.
+                </p>
               </div>
             </article>
           </div>
@@ -488,8 +525,11 @@
                   height="220"
                 />
               </a>
-              <div class="card-body bg-dark text-light text-center">
-                <h3 class="card-title h6">Administrador de pacientes</h3>
+              <div class="card-body bg-dark text-light text-start">
+                <h3 class="card-title h6 text-center text-warning">Administrador de pacientes</h3>
+                <p class="card-text small mt-3">
+                  Sistema de gestión de citas médicas tipo SPA. Implementa una arquitectura MVC (Modelo-Vista-Controlador) en el cliente usando Vanilla JavaScript. Destaca por su capacidad de gestión de estado complejo y validación de formularios en tiempo real. La persistencia de datos se maneja a través de LocalStorage, asegurando que la información del usuario se mantenga entre sesiones sin necesidad de base de datos externa.
+                </p>
               </div>
             </article>
           </div>
@@ -511,8 +551,11 @@
                   height="220"
                 />
               </a>
-              <div class="card-body bg-dark text-light text-center">
-                <h3 class="card-title h6">Calculadora de Gastos Quincenales</h3>
+              <div class="card-body bg-dark text-light text-start">
+                <h3 class="card-title h6 text-center text-warning">Calculadora de Gastos Quincenales</h3>
+                <p class="card-text small mt-3">
+                  Herramienta financiera personal desarrollada como SPA. Se centra en la interactividad y el cálculo dinámico de presupuestos. Utiliza manipulación avanzada del DOM para agregar y eliminar gastos dinámicamente, actualizando los balances en tiempo real. Implementa patrones de diseño para la gestión de eventos y persistencia local, ofreciendo una experiencia de usuario fluida y reactiva.
+                </p>
               </div>
             </article>
           </div>
@@ -548,8 +591,11 @@
                   height="220"
                 />
               </a>
-              <div class="card-body bg-dark text-light text-center">
-                <h3 class="card-title h6">Catálogo de productos</h3>
+              <div class="card-body bg-dark text-light text-start">
+                <h3 class="card-title h6 text-center text-warning">Catálogo de productos</h3>
+                <p class="card-text small mt-3">
+                  Este catálogo ha sido generado automáticamente mediante un sistema de software desarrollado en TypeScript con el framework NestJS para la empresa Coasquímicos S.A.S. Los datos de productos se almacenan y gestionan en una base de datos PostgreSQL, y el documento PDF se compila en tiempo real utilizando la biblioteca pdfmake, garantizando que la información presentada esté siempre actualizada.
+                </p>
               </div>
             </article>
           </div>
@@ -571,8 +617,11 @@
                   height="220"
                 />
               </a>
-              <div class="card-body bg-dark text-light text-center">
-                <h3 class="card-title h6">Publicidad Visual</h3>
+              <div class="card-body bg-dark text-light text-start">
+                <h3 class="card-title h6 text-center text-warning">Publicidad Visual</h3>
+                <p class="card-text small mt-3">
+                  Desarrollado con el software Adobe Photoshop, enfocándose en la composición visual y el retoque digital profesional para campañas publicitarias de alto impacto.
+                </p>
               </div>
             </article>
           </div>
@@ -594,8 +643,11 @@
                   height="220"
                 />
               </a>
-              <div class="card-body bg-dark text-light text-center">
-                <h3 class="card-title h6">Diseño Creativo en 3D</h3>
+              <div class="card-body bg-dark text-light text-start">
+                <h3 class="card-title h6 text-center text-warning">Diseño Creativo en 3D</h3>
+                <p class="card-text small mt-3">
+                  Desarrollado con el software de modelado Blender para construir un parque temático con materia prima ecológica para la empresa Ecosmile SAS Ingeniería Sostenible. Incluye texturizado, iluminación y renderizado realista.
+                </p>
               </div>
             </article>
           </div>
@@ -623,22 +675,27 @@
                 width="400"
                 height="220"
               />
-              <div class="card-body bg-dark text-light text-center">
-                <h3 class="card-title h6">
+              <div class="card-body bg-dark text-light text-start">
+                <h3 class="card-title h6 text-center text-warning">
                   Diseño de controlador PID para motor DC
                 </h3>
-                <a
-                  href="https://drive.google.com/file/d/1zu9-xlcSTSrWlXKQ43voyvTfJDsAchx2/view"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn btn-outline-warning btn-sm"
-                >
-                  <i
-                    class="fas fa-external-link-alt me-1"
-                    aria-hidden="true"
-                  ></i
-                  >Ver en Google Drive
-                </a>
+                <p class="card-text small mt-3 mb-3">
+                  Controlador proporcional integral derivativo (PID) diseñado para controlar la posición de un motor de corriente continua. Proyecto universitario enfocado en teoría de control y sistemas dinámicos.
+                </p>
+                <div class="text-center">
+                  <a
+                    href="https://drive.google.com/file/d/1zu9-xlcSTSrWlXKQ43voyvTfJDsAchx2/view"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-outline-warning btn-sm"
+                  >
+                    <i
+                      class="fas fa-external-link-alt me-1"
+                      aria-hidden="true"
+                    ></i
+                    >Ver en Google Drive
+                  </a>
+                </div>
               </div>
             </article>
           </div>
@@ -653,20 +710,25 @@
                 width="400"
                 height="220"
               />
-              <div class="card-body bg-dark text-light text-center">
-                <h3 class="card-title h6">Sistema de alerta temprana</h3>
-                <a
-                  href="https://drive.google.com/file/d/1zuDyi0XSZDAe2_AxhgKLGV3N8QQ_jGJC/view?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn btn-outline-warning btn-sm"
-                >
-                  <i
-                    class="fas fa-external-link-alt me-1"
-                    aria-hidden="true"
-                  ></i
-                  >Ver en Google Drive
-                </a>
+              <div class="card-body bg-dark text-light text-start">
+                <h3 class="card-title h6 text-center text-warning">Sistema de alerta temprana</h3>
+                <p class="card-text small mt-3 mb-3">
+                  Uso de microcontrolador Arduino, módulo de relés y tarjeta SIM900 (banda 2G) para crear un sistema de alarma que usa la red PSTN tradicional para avisar en tiempo real de acceso no autorizado detectado por sensores PIR de movimiento.
+                </p>
+                <div class="text-center">
+                  <a
+                    href="https://drive.google.com/file/d/1zuDyi0XSZDAe2_AxhgKLGV3N8QQ_jGJC/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-outline-warning btn-sm"
+                  >
+                    <i
+                      class="fas fa-external-link-alt me-1"
+                      aria-hidden="true"
+                    ></i
+                    >Ver en Google Drive
+                  </a>
+                </div>
               </div>
             </article>
           </div>
@@ -681,20 +743,25 @@
                 width="400"
                 height="220"
               />
-              <div class="card-body bg-dark text-light text-center">
-                <h3 class="card-title h6">Transmisor FM de baja potencia</h3>
-                <a
-                  href="https://drive.google.com/file/d/1pcy2S0qMcMrT-z2hl5gMqqW9UNE9xocu/view"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn btn-outline-warning btn-sm"
-                >
-                  <i
-                    class="fas fa-external-link-alt me-1"
-                    aria-hidden="true"
-                  ></i
-                  >Ver en Google Drive
-                </a>
+              <div class="card-body bg-dark text-light text-start">
+                <h3 class="card-title h6 text-center text-warning">Transmisor FM de baja potencia</h3>
+                <p class="card-text small mt-3 mb-3">
+                  Sistema de transmisor FM de baja potencia construido con transistores 2N2222 utilizando dos etapas: una para amplificar la señal de audio de un micrófono y otra para crear una oscilación de radiofrecuencia (FM) con un circuito tanque LC que trabaja a una frecuencia de 85.3 MHz.
+                </p>
+                <div class="text-center">
+                  <a
+                    href="https://drive.google.com/file/d/1pcy2S0qMcMrT-z2hl5gMqqW9UNE9xocu/view"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-outline-warning btn-sm"
+                  >
+                    <i
+                      class="fas fa-external-link-alt me-1"
+                      aria-hidden="true"
+                    ></i
+                    >Ver en Google Drive
+                  </a>
+                </div>
               </div>
             </article>
           </div>
@@ -997,14 +1064,13 @@
                   class="img-fluid rounded github-fallback-img"
                   loading="lazy"
                 />
-                <div style="display: none;">
-                  <div id="github-stats-card">
-                    <div class="text-center py-4">
-                      <div class="spinner-border text-warning" role="status">
-                        <span class="visually-hidden">Cargando...</span>
-                      </div>
-                      <p class="text-light mt-2 mb-0">Cargando estadísticas...</p>
-                    </div>
+                <div class="github-error-fallback" style="display: none;">
+                  <div class="text-center py-4">
+                    <i class="fab fa-github fa-3x text-secondary mb-3"></i>
+                    <p class="text-light mb-3">Ver estadísticas en GitHub</p>
+                    <a href="https://github.com/Danielperdomo29" target="_blank" class="btn btn-outline-warning btn-sm">
+                      Ir a GitHub
+                    </a>
                   </div>
                 </div>
               </div>
@@ -1023,14 +1089,13 @@
                   class="img-fluid rounded github-fallback-img"
                   loading="lazy"
                 />
-                <div style="display: none;">
-                  <div id="github-langs-card">
-                    <div class="text-center py-4">
-                      <div class="spinner-border text-warning" role="status">
-                        <span class="visually-hidden">Cargando...</span>
-                      </div>
-                      <p class="text-light mt-2 mb-0">Cargando lenguajes...</p>
-                    </div>
+                <div class="github-error-fallback" style="display: none;">
+                  <div class="text-center py-4">
+                    <i class="fas fa-code fa-3x text-secondary mb-3"></i>
+                    <p class="text-light mb-3">Ver lenguajes en GitHub</p>
+                    <a href="https://github.com/Danielperdomo29" target="_blank" class="btn btn-outline-warning btn-sm">
+                      Ir a GitHub
+                    </a>
                   </div>
                 </div>
               </div>
@@ -1070,9 +1135,18 @@
                 <img 
                   src="https://github-readme-activity-graph.vercel.app/graph?username=Danielperdomo29&bg_color=0d1117&color=ffcc00&line=ffcc00&point=ffffff&area=true&hide_border=true"
                   alt="Gráfico de actividad de GitHub de Daniel Perdomo"
-                  class="img-fluid rounded"
+                  class="img-fluid rounded github-fallback-img"
                   loading="lazy"
                 />
+                <div class="github-error-fallback" style="display: none;">
+                  <div class="text-center py-4">
+                    <i class="fas fa-calendar-alt fa-3x text-secondary mb-3"></i>
+                    <p class="text-light mb-3">Ver actividad en GitHub</p>
+                    <a href="https://github.com/Danielperdomo29" target="_blank" class="btn btn-outline-warning btn-sm">
+                      Ir a GitHub
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
