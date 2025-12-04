@@ -316,5 +316,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         `;
         document.head.appendChild(style);
+
+        // Manejar errores de carga de imágenes (Fallback)
+        // Esto reemplaza el onerror inline para cumplir con CSP estricto
+        const fallbackImages = document.querySelectorAll('.github-fallback-img');
+        fallbackImages.forEach(img => {
+            img.addEventListener('error', function () {
+                console.log('Error cargando imagen de GitHub, activando fallback...');
+                this.style.display = 'none';
+                if (this.nextElementSibling) {
+                    this.nextElementSibling.style.display = 'block';
+                }
+            });
+        });
     }, 1000);
 });

@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Hoja de vida de Daniel Enrique Perdomo Carvajal. Consultor en tecnología, desarrollo web y soluciones digitales."
+      content="Portafolio de Daniel Enrique Perdomo Carvajal. Ingeniero Electrónico y Desarrollador Fullstack Senior especializado en DevSecOps, Automatización y Arquitectura de Software."
     />
     <meta
       name="keywords"
-      content="Daniel Enrique Perdomo Carvajal, consultor, hoja de vida, desarrollo web, tecnología"
+      content="Daniel Perdomo, Fullstack Developer, DevSecOps, Ingeniero Electrónico, Portfolio, Web Development, Cybersecurity"
     />
-    <title>Daniel Enrique Perdomo Carvajal - Ingeniero Electrónico</title>
+    <title>Daniel Perdomo | Senior Fullstack Engineer</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
     <link
@@ -32,29 +37,53 @@
     <link rel="stylesheet" href="/css/estilos.css" />
 
     <!-- Favicons -->
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="96x96"
-      href="/Imagenes/favicon/favicon-96x96.png"
-    />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/Imagenes/favicon/favicon.svg"
-    />
+    <link rel="icon" type="image/png" sizes="96x96" href="/Imagenes/favicon/favicon-96x96.png" />
+    <link rel="icon" type="image/svg+xml" href="/Imagenes/favicon/favicon.svg" />
     <link rel="shortcut icon" href="/Imagenes/favicon/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/Imagenes/favicon/apple-touch-icon.png"
-    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/Imagenes/favicon/apple-touch-icon.png" />
 
     <!-- Manifest -->
     <link rel="manifest" href="Imagenes/favicon/site.webmanifest" />
     <meta name="apple-mobile-web-app-title" content="Perdomo Industries" />
     <meta name="application-name" content="Perdomo Industries" />
     <meta name="theme-color" content="#ffcc00" />
+
+    <!-- Estilos Específicos para las Nuevas Secciones (Timeline y Navbar) -->
+    <style>
+      :root {
+        --font-code: 'JetBrains Mono', monospace;
+      }
+      
+      .font-code { font-family: var(--font-code); }
+
+      /* Timeline Styles */
+      .timeline-item {
+        border-left: 2px solid rgba(255, 204, 0, 0.3);
+        padding-left: 2rem;
+        position: relative;
+        padding-bottom: 3rem;
+      }
+      .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: -6px;
+        top: 0;
+        width: 10px;
+        height: 10px;
+        background: #ffcc00;
+        border-radius: 50%;
+        box-shadow: 0 0 10px #ffcc00;
+      }
+      .timeline-item:last-child {
+        border-left: 2px solid transparent;
+      }
+
+      /* Navbar Brand Update */
+      .navbar-brand span {
+        font-family: var(--font-code);
+        letter-spacing: -0.5px;
+      }
+    </style>
   </head>
   <body>
     <canvas id="matrix-canvas" class="matrix-glow" aria-hidden="true"></canvas>
@@ -62,23 +91,27 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container-fluid">
-        <img
-          src="Imagenes/FotoDePerfil.png"
-          alt="Daniel Perdomo - Ingeniero Electrónico"
-          class="rounded-circle border border-warning me-3 perfil-img"
-          width="45"
-          height="45"
-          data-bs-toggle="modal"
-          data-bs-target="#modalFoto"
-          loading="lazy"
-        />
-        <a
-          class="navbar-brand fw-bold"
-          href="https://www.linkedin.com/in/daniel-enrique-perdomo-carvajal-3a472a187/"
-          target="_blank"
-          rel="noopener"
-          >Perfil Profesional</a
-        >
+        <!-- Nuevo Branding -->
+        <div class="navbar-brand d-flex align-items-center gap-3">
+          <img 
+            src="/Imagenes/FotoDePerfil.png" 
+            alt="Daniel Perdomo" 
+            class="rounded-circle border border-warning" 
+            width="45" 
+            height="45"
+            data-bs-toggle="modal" 
+            data-bs-target="#modalFoto"
+            style="cursor: pointer;"
+          >
+          <a 
+            href="https://www.linkedin.com/in/daniel-enrique-perdomo-carvajal-3a472a187/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="fw-bold font-code text-warning text-decoration-none"
+          >
+            Daniel.Dev()
+          </a>
+        </div>
 
         <button
           class="navbar-toggler"
@@ -123,7 +156,7 @@
       </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (Diseño Original con Textos Nuevos) -->
     <section id="hero" aria-labelledby="hero-title">
       <div class="hero-slider" aria-live="polite"></div>
 
@@ -132,13 +165,12 @@
           Daniel Enrique Perdomo Carvajal
         </h1>
         <p id="descripcion-profesion" class="lead">
-          Ingeniero Electrónico | Fullstack Developer | DevSecOps |
-          Automatización
+          <i class="fas fa-terminal me-2 text-warning"></i>Senior Fullstack Engineer & DevSecOps
         </p>
 
         <div class="hero-dinamico mt-4">
-          <h2 id="hero-title" class="h3"></h2>
-          <p id="hero-subtitle" class="h5"></p>
+          <h2 id="hero-title" class="h3">Construyendo arquitecturas seguras y escalables</h2>
+          <p id="hero-subtitle" class="h5">Transformando problemas complejos en soluciones robustas</p>
         </div>
         <a href="#contacto" class="btn btn-warning btn-lg btn-animado mt-3"
           >Contáctame</a
@@ -156,7 +188,7 @@
     </section>
 
     <main id="contenido-principal">
-      <!-- Perfil Profesional -->
+      <!-- Perfil Profesional (Texto Actualizado) -->
       <section
         id="perfil"
         class="container py-5"
@@ -165,137 +197,80 @@
       >
         <div class="card shadow-lg rounded-4 p-4">
           <h2 id="perfil-title" class="h4 text-warning">
-            <i class="fas fa-user me-2" aria-hidden="true"></i>Perfil
-            Profesional
+            <i class="fas fa-user me-2" aria-hidden="true"></i>Perfil Profesional
           </h2>
-          <p class="mb-0 text-light">
+          <p class="mb-3 text-light">
             Analista de Seguridad Informática y Desarrollador especializado en
             DevSecOps, integrando seguridad en pipelines CI/CD con Docker y
             GitHub Actions. Domino Python para procesamiento de imágenes,
             señales digitales y construcción de redes neuronales, junto con
             pentesting (Nmap, Burp Suite, Metasploit) y desarrollo full-stack
-            (JavaScript, TypeScript, React, Node.js). En Coasquímicos S.A.S.
-            lideré automatización industrial y plataforma web que aumentó
-            ingresos 65%. Implemento prácticas DevSecOps para asegurar
-            desarrollo desde el diseño, con pipelines automatizados y escaneos
-            de seguridad continuos. Certificaciones estratégicas a mediano y lago plazo: AWS Solutions Architect, EWPT y OSCP. 
+            (JavaScript, TypeScript, React, Node.js).
+          </p>
+          <p class="mb-0 text-muted small border-top border-secondary pt-3">
+            <i class="fas fa-info-circle me-2 text-warning"></i>
+            <strong>Sobre esta plataforma:</strong> Esta web está desarrollada con un enfoque profesional, implementando autenticación segura, control de sesiones y protección de datos. Incluye un sistema de gestión integral con validación de usuarios, roles, autorización y manejo avanzado de formularios. La arquitectura está organizada en componentes modulares para mejorar escalabilidad y mantenimiento, con integración de servicios externos y buenas prácticas de seguridad (cifrado, sanitización, CSP).
           </p>
         </div>
       </section>
 
-      <!-- Experiencia -->
-      <section
-        id="experiencia"
-        class="py-5"
-        data-aos="fade-up"
-        aria-labelledby="experiencia-title"
-      >
+      <!-- Experiencia (NUEVO DISEÑO TIMELINE) -->
+      <section id="experiencia" class="py-5">
         <div class="container">
-          <h2 id="experiencia-title" class="mb-4 h4 text-warning">
-            <i class="fas fa-briefcase me-2" aria-hidden="true"></i>Experiencia
+          <h2 id="experiencia-title" class="mb-5 h4 text-warning" data-aos="fade-up">
+            <i class="fas fa-briefcase me-2" aria-hidden="true"></i>Trayectoria Profesional
           </h2>
-          <div class="row g-4">
-            <div class="col-md-6">
-              <article class="card shadow-lg rounded-4 p-4 h-100">
-                <h3 class="h5 text-light">Coasquímicos S.A.S (2023–2025)</h3>
-                <h4 class="h6 text-warning">
-                  Ingeniero de Automatización y Desarrollo | 2023 – 2025
-                </h4>
-                <ul class="mb-0 text-light">
-                  <li>
-                    Lideré la automatización de un agitador industrial,
-                    diseñando e implementando un sistema de control basado en
-                    microcontroladores que evitó la necesidad de PLCs costosos,
-                    mejorando la eficiencia de producción.
-                  </li>
-                  <li>
-                    Diseñé y desarrollé una plataforma web para ventas que
-                    resultó en un incremento del 65% en los ingresos.
-                  </li>
-                  <li>
-                    Implementé algoritmos de análisis de datos para la toma de
-                    decisiones basada en el comportamiento de los usuarios.
-                  </li>
-                  <li>
-                    Gestioné el mantenimiento preventivo y correctivo de la
-                    infraestructura tecnológica y equipos industriales,
-                    minimizando tiempos de inactividad.
-                  </li>
-                  <li>
-                    Mantenimiento preventivo y correctivo de equipos
-                    electrónicos industriales.
-                  </li>
-                </ul>
-              </article>
-            </div>
-            <div class="col-md-6">
-              <article class="card shadow-lg rounded-4 p-4 h-100">
-                <h3 class="h5 text-light">
-                  Freelancer – CRM Licitaciones KJC proyectos
-                </h3>
-                <h4 class="h6 text-warning">Desarrollador Full-Stack | 2024</h4>
-                <ul class="mb-0 text-light">
-                  <li>
-                    Diseñé y desarrollé un CRM web personalizado para la gestión
-                    de licitaciones, con filtros avanzados por entidad
-                    contratante.
-                  </li>
-                  <li>
-                    Automatización integral de documentación (hojas de vida,
-                    certificados, cronogramas), aumentando la eficiencia
-                    operativa.
-                  </li>
-                  <li>
-                    Implementación de un sistema de seguimiento y alertas
-                    inteligentes para convocatorias.
-                  </li>
-                </ul>
-              </article>
-            </div>
-            <div class="col-md-6">
-              <article class="card shadow-lg rounded-4 p-4 h-100">
-                <h3 class="h5 text-light">Grupo Empresarial Recicla S.A.S.</h3>
-                <h4 class="h6 text-warning">
-                  Ingeniero de Proyectos | Modalidad Híbrida | Oct 2024 - Dic
-                  2024
-                </h4>
-                <ul class="mb-0 text-light">
-                  <li>
-                    Diseñé e implementé un Sistema de Información Geográfica
-                    (SIG) utilizando QGIS para la optimización de rutas de
-                    recolección, cumpliendo con la normativa SUI.
-                  </li>
-                  <li>
-                    Gestioné y di soporte a la infraestructura web de la empresa
-                  </li>
-                </ul>
-              </article>
-            </div>
-            <div class="col-md-6">
-              <article class="card shadow-lg rounded-4 p-4 h-100">
-                <h3 class="h5 text-light">
-                  EcoSmile S.A.S. – Ingeniería Sostenible
-                </h3>
-                <h4 class="h6 text-warning">
-                  Desarrollador junior & Consultor TI | Jornada Parcial | May
-                  2019 - Ene 2025
-                </h4>
-                <ul class="mb-0 text-light">
-                  <li>
-                    Lideré el diseño, desarrollo y mantenimiento de aplicaciones
-                    web responsivas y de alto rendimiento.
-                  </li>
-                  <li>
-                    Asesoré técnicamente en el dimensionamiento de sistemas de
-                    energía renovable y desarrollé modelos 3D para proyectos de
-                    sostenibilidad.
-                  </li>
-                  <li>
-                    Gestioné la infraestructura tecnológica, providing soporte
-                    técnico avanzado y resolución proactiva de incidentes.
-                  </li>
-                </ul>
-              </article>
+          
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              
+              <div class="timeline-item" data-aos="fade-up">
+                <span class="text-warning font-code small">2023 - 2025</span>
+                <h3 class="h4 text-light mt-1">Ingeniero de Automatización y Desarrollo</h3>
+                <h4 class="h6 text-muted">Coasquímicos S.A.S</h4>
+                <p class="text-light mt-3 text-justify">
+                  Como Ingeniero de Automatización y Desarrollo, orquesté una transformación DevOps integral diseñando e implementando pipelines de automatización industrial mediante microcontroladores que reemplazaron costosos PLCs. Desarrollé y desplegué una plataforma web de ventas con stack moderno (HTML5, CSS3, JS ES6+, TypeScript) que incrementó los ingresos en un 65%. Bajo principios de IaC, implementé una plataforma interna con enfoque DevSecOps, integrando la triada CIA en el ciclo de vida del desarrollo mediante controles de seguridad automatizados. Gestioné la infraestructura tecnológica con enfoque CI/CD usando Kubernetes (Master/Worker Nodes, Kubelet, Container Runtime, Service Discovery), optimizando procesos industriales y digitales mediante automatización y monitorización proactiva, estableciendo una cultura DevOps que aseguró la resiliencia operacional.
+                </p>
+                <div class="d-flex gap-2 mt-2 flex-wrap">
+                  <span class="badge bg-dark border border-secondary">DevSecOps</span>
+                  <span class="badge bg-dark border border-secondary">Kubernetes</span>
+                  <span class="badge bg-dark border border-secondary">IoT</span>
+                  <span class="badge bg-dark border border-secondary">CI/CD</span>
+                </div>
+              </div>
+
+              <div class="timeline-item" data-aos="fade-up">
+                <span class="text-warning font-code small">2024</span>
+                <h3 class="h4 text-light mt-1">Desarrollador Full-Stack Freelance</h3>
+                <h4 class="h6 text-muted">CRM Licitaciones KJC</h4>
+                <p class="text-light mt-3">
+                  Arquitectura y desarrollo de un CRM personalizado para gestión de licitaciones gubernamentales. Implementación de automatización de documentos y sistema de alertas inteligentes.
+                </p>
+                <div class="d-flex gap-2 mt-2 flex-wrap">
+                  <span class="badge bg-dark border border-secondary">React</span>
+                  <span class="badge bg-dark border border-secondary">Node.js</span>
+                  <span class="badge bg-dark border border-secondary">CRM</span>
+                </div>
+              </div>
+
+              <div class="timeline-item" data-aos="fade-up">
+                <span class="text-warning font-code small">Oct 2024 - Dic 2024</span>
+                <h3 class="h4 text-light mt-1">Ingeniero de Proyectos</h3>
+                <h4 class="h6 text-muted">Grupo Empresarial Recicla S.A.S.</h4>
+                <p class="text-light mt-3">
+                  Diseñé e implementé un Sistema de Información Geográfica (SIG) utilizando QGIS para la optimización de rutas de recolección, cumpliendo con la normativa SUI.
+                </p>
+              </div>
+
+              <div class="timeline-item" data-aos="fade-up">
+                <span class="text-warning font-code small">2019 - 2025</span>
+                <h3 class="h4 text-light mt-1">Consultor TI & Desarrollador</h3>
+                <h4 class="h6 text-muted">EcoSmile S.A.S.</h4>
+                <p class="text-light mt-3">
+                  Consultoría técnica en sistemas sostenibles y desarrollo de aplicaciones web. Gestión de infraestructura tecnológica y soporte avanzado.
+                </p>
+              </div>
+
             </div>
           </div>
         </div>
@@ -369,7 +344,7 @@
         </div>
       </section>
 
-      <!-- Proyectos Webs -->
+      <!-- Proyectos Webs (Diseño Original) -->
       <section
         id="proyectos"
         class="container py-5"
@@ -1019,9 +994,8 @@
                 <img 
                   src="https://github-readme-stats.vercel.app/api?username=Danielperdomo29&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=ffcc00&text_color=ffffff&icon_color=ffcc00"
                   alt="Estadísticas de GitHub de Daniel Perdomo"
-                  class="img-fluid rounded"
+                  class="img-fluid rounded github-fallback-img"
                   loading="lazy"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
                 />
                 <div style="display: none;">
                   <div id="github-stats-card">
@@ -1046,9 +1020,8 @@
                 <img 
                   src="https://github-readme-stats.vercel.app/api/top-langs/?username=Danielperdomo29&layout=compact&theme=dark&hide_border=true&bg_color=0d1117&title_color=ffcc00&text_color=ffffff"
                   alt="Lenguajes más usados por Daniel Perdomo"
-                  class="img-fluid rounded"
+                  class="img-fluid rounded github-fallback-img"
                   loading="lazy"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
                 />
                 <div style="display: none;">
                   <div id="github-langs-card">
@@ -1084,18 +1057,7 @@
           </div>
         </div>
 
-        <!-- Repositorios Destacados -->
-        <h3 class="h5 text-warning mb-4 text-center">
-          <i class="fas fa-star me-2"></i>Repositorios Destacados
-        </h3>
-        <div id="github-repos" class="row g-4">
-          <!-- Los repositorios se cargarán dinámicamente aquí -->
-          <div class="col-12 text-center">
-            <div class="spinner-border text-warning" role="status">
-              <span class="visually-hidden">Cargando repositorios...</span>
-            </div>
-          </div>
-        </div>
+
 
         <!-- GitHub Contribution Graph -->
         <div class="row g-4 mt-4">
@@ -1116,24 +1078,7 @@
           </div>
         </div>
 
-        <!-- GitHub Trophies -->
-        <div class="row g-4 mt-4">
-          <div class="col-12">
-            <div class="card shadow-lg rounded-4 p-4 bg-dark border-warning">
-              <div class="text-center">
-                <h3 class="h5 text-warning mb-3">
-                  <i class="fas fa-trophy me-2"></i>Logros de GitHub
-                </h3>
-                <img 
-                  src="https://github-profile-trophy.vercel.app/?username=Danielperdomo29&theme=darkhub&no-frame=true&no-bg=true&column=4&margin-w=15&margin-h=15"
-                  alt="Trofeos de GitHub de Daniel Perdomo"
-                  class="img-fluid"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+
       </section>
 
       <!-- Comentarios -->

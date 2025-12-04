@@ -100,10 +100,8 @@ const getHelmetConfig = (nonce) => ({
                 "https://cdnjs.cloudflare.com",
                 `'nonce-${nonce}'`,
                 "'unsafe-inline'",
-                "'unsafe-eval'",
-                "'unsafe-hashes'"
+                "'unsafe-eval'"
             ],
-            scriptSrcAttr: ["'unsafe-inline'", "'unsafe-hashes'"],
             styleSrc: [
                 "'self'",
                 "'unsafe-inline'",

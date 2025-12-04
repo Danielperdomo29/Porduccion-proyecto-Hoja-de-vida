@@ -56,14 +56,12 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 // CORS
 app.use(cors(corsOptions));
 
-// Nonce generation
+// Nonce generation and Helmet configuration with dynamic nonce
 app.use((req, res, next) => {
     res.locals.nonce = crypto.randomBytes(16).toString('base64');
-    next();
+    const helmetConfig = getHelmetConfig(res.locals.nonce);
+    helmet(helmetConfig)(req, res, next);
 });
-
-// Helmet
-app.use(helmet(getHelmetConfig()));
 
 // MongoDB sanitization
 app.use(mongoSanitize({
@@ -78,13 +76,15 @@ app.use(hpp({
     whitelist: ['filter', 'sort', 'page', 'limit']
 }));
 
-// Custom security headers
+// Custom security headers for A+ rating
 app.use((req, res, next) => {
+    // Permissions Policy: Restrict sensitive features
+    res.setHeader('Permissions-Policy', 'geolocation=(), microphone=(), camera=(), payment=(), usb=(), vr=(), interest-cohort=()');
+
+    // Additional hardening not covered by Helmet default
     res.setHeader('X-Content-Type-Options', 'nosniff');
-    res.setHeader('X-Frame-Options', 'DENY');
-    res.setHeader('X-XSS-Protection', '1; mode=block');
     res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
-    res.setHeader('Permissions-Policy', 'geolocation=(), microphone=(), camera=()');
+
     next();
 });
 
